@@ -1,0 +1,203 @@
+.btn {
+  border-color: transparent;
+  position: relative;
+  transition: all 0.2s;
+
+  &:hover,
+  &:focus,
+  &:active,
+  &:active:hover,
+  &:active:focus,
+  &[disabled]:hover {
+    border-color: transparent;
+    box-shadow: none;
+    outline: 0 !important;
+  }
+
+  // Colors
+
+  &-default {
+    &,
+    &:hover,
+    &:focus,
+    &:active,
+    &:active:hover,
+    &:active:focus,
+    &[disabled]:hover {
+      background-color: $color-gray-03;
+      color: $color-gray-01;
+    }
+
+    &:hover {
+      background-color: lighten($color-gray-03, 2%);
+    }
+
+    .btn-loader {
+      color: $color-gray-02;
+    }
+  }
+
+  &-primary {
+    &,
+    &:hover,
+    &:focus,
+    &:active,
+    &:active:hover,
+    &:active:focus,
+    &[disabled]:hover {
+      background-color: $color-purple-03;
+    }
+
+    &:hover {
+      background-color: lighten($color-purple-03, 5%);
+    }
+
+    .btn-loader {
+      color: $color-white;
+    }
+  }
+
+  &-success {
+    &,
+    &:hover,
+    &:focus,
+    &:active,
+    &:active:hover,
+    &:active:focus,
+    &[disabled]:hover {
+      background-color: $color-green-03;
+      color: $color-green-00;
+    }
+
+    &:hover {
+      background-color: lighten($color-green-03, 4%);
+    }
+
+    .btn-loader {
+      color: $color-green-00;
+    }
+  }
+
+  &-danger {
+    &,
+    &:hover,
+    &:focus,
+    &:active,
+    &:active:hover,
+    &:active:focus,
+    &[disabled]:hover {
+      background-color: $color-pink-00;
+      color: $color-red-00;
+    }
+
+    &:hover {
+      background-color: lighten($color-pink-00, 3%);
+    }
+
+    .btn-loader {
+      color: $color-red-00;
+    }
+  }
+
+  // Sizes
+
+  &-sm {
+    padding-left: 10px;
+    padding-right: 10px;
+
+    &.btn-loading {
+      .btn-loader {
+        font-size: 2px;
+        top: 6px;
+      }
+    }
+  }
+
+  &-lg {
+    border-radius: $border-radius-box;
+    font-size: $font-size-large;
+    padding: 13px 23px;
+
+    &.btn-loading {
+      .btn-loader {
+        font-size: 6px;
+        top: 2px;
+      }
+    }
+  }
+
+  // Loaders
+
+  .btn-loader {
+    &,
+    &:before,
+    &:after {
+      @include square(2.5em);
+
+      animation: button-loader 1.8s infinite ease-in-out;
+      animation-fill-mode: both;
+      border-radius: 50%;
+    }
+  }
+
+  &.btn-loading {
+    color: transparent !important;
+  }
+
+  .btn-loader {
+    animation-delay: -0.16s;
+    display: inline-block;
+    font-size: 4px;
+    left: 50%;
+    position: absolute;
+    text-indent: -9999em;
+    top: 2px;
+    transform: translateX(-50%);
+
+    &:before {
+      animation-delay: -0.32s;
+      left: -3.5em;
+    }
+
+    &:after {
+      left: 3.5em;
+    }
+
+    &:before,
+    &:after {
+      content: '';
+      position: absolute;
+      top: 0;
+    }
+  }
+
+  // Utils
+
+  &-set {
+    font-size: 0;
+  }
+}
+
+@-webkit-keyframes button-loader {
+  0%,
+  80%,
+  100% {
+    box-shadow: 0 2.5em 0 -1.3em;
+  }
+
+  40% {
+    box-shadow: 0 2.5em 0 0;
+  }
+}
+
+@keyframes button-loader {
+  0%,
+  80%,
+  100% {
+    box-shadow: 0 2.5em 0 -1.3em;
+  }
+
+  40% {
+    box-shadow: 0 2.5em 0 0;
+  }
+}

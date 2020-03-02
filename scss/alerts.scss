@@ -1,0 +1,15 @@
+.alert {
+  border: 0;
+  font-size: $font-size-large;
+  font-weight: $font-weight-medium;
+
+  &.alert-success {
+    background-color: $color-green-03;
+    color: $color-green-00;
+  }
+
+  &.alert-danger {
+    background-color: $color-pink-00;
+    color: $color-red-00;
+  }
+}

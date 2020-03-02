@@ -1,0 +1,39 @@
+.popover {
+  border: 0;
+  box-shadow: 0 3px $grid rgba(0, 0, 0, 0.1);
+  padding: 10px;
+
+  .arrow {
+    border: 0 !important;
+    margin-left: 2px !important;
+  }
+
+  .close {
+    border: 0;
+    color: $color-gray-01;
+    font-size: $font-size-h3;
+    position: absolute;
+    right: 3px;
+    top: 0;
+  }
+
+  &.top {
+    .arrow {
+      &:after {
+        border-left: 7px solid transparent;
+        border-right: 7px solid transparent;
+        border-top: 11px solid $color-white;
+      }
+    }
+  }
+
+  &.bottom {
+    .arrow {
+      &:after {
+        border-left: 7px solid transparent;
+        border-right: 7px solid transparent;
+        border-bottom: 11px solid $color-white;
+      }
+    }
+  }
+}

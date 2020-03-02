@@ -1,0 +1,106 @@
+$app:                       hiway;
+
+// Colors
+
+$color-white:             #fff !default;
+$color-black:             #000 !default;
+$color-gray-00:           #141f33 !default;
+$color-gray-01:           #738195 !default;
+$color-gray-02:           #b5bfc4 !default;
+$color-gray-03:           #ebeff0 !default;
+$color-gray-04:           #f5f7fa !default;
+$color-gray-05:           #fafafa !default;
+$color-gray-06:           #dee0e2 !default;
+$color-gray-07:           #959ca7 !default;
+$color-green-00:          #007577 !default;
+$color-green-01:          #00babd !default;
+$color-green-02:          #7fdcde !default;
+$color-green-03:          #ccf1f3 !default;
+$color-green-04:          #59c019 !default;
+$color-green-05:          #f3ffe6 !default;
+$color-green-06:          #f4f9fa !default;
+$color-green-07:          #009da2 !default;
+$color-purple-00:         #2a2373 !default;
+$color-purple-01:         #6264d7 !default;
+$color-purple-02:         #585cc4 !default;
+$color-purple-03:         #6b6aff !default;
+$color-purple-04:         #4b33ec !default;
+$color-pink-00:           #fecdd3 !default;
+$color-red-00:            #f66161 !default;
+$color-blue-00:           #1698dc !default;
+
+$link-color:                $color-blue-00 !default;
+$link-hover-color:          $color-blue-00 !default;
+
+// Borders
+
+$border-radius-box:         5px !default;
+$border-solid-dark:         1px solid $color-gray-02 !default;
+$border-solid:              1px solid $color-gray-03 !default;
+$border-solid-light:        1px solid $color-gray-04 !default;
+
+// Fonts
+
+$font-family:               'Raleway', Helvetica, Arial, sans-serif !default;
+
+$font-size-small:           12px !default;
+$font-size-base:            14px !default;
+$font-size-large:           18px !default;
+$font-size-h1:              42px !default;
+$font-size-h2:              30px !default;
+$font-size-h3:              20px !default;
+$font-size-h4:              16px !default;
+$font-size-h5:              13px !default;
+$font-size-h6:              $font-size-small !default;
+
+$font-weight-light:         300 !default;
+$font-weight-normal:        400 !default;
+$font-weight-medium:        500 !default;
+$font-weight-bold:          600 !default;
+$font-weight-heavy:         700 !default;
+
+// Line heights
+
+$line-height-base:          1.5 !default;
+$line-height-computed:      floor(($font-size-base * $line-height-base)) !default;
+$line-height-h1:            floor(($line-height-computed * 2.45)) !default;
+$line-height-h2:            floor(($line-height-computed * 1.83)) !default;
+$line-height-h3:            floor(($line-height-computed * 1.2)) !default;
+$line-height-h4:            floor(($line-height-computed * 1.09)) !default;
+$line-height-h5:            $line-height-computed !default;
+$line-height-h6:            floor(($line-height-computed * 0.83)) !default;
+
+// Text variants
+
+$text-muted:                $color-gray-02 !default;
+
+// Headings
+
+$headings-font-weight:      $font-weight-bold !default;
+
+// Buttons
+
+$btn-lg-height:             50px !default;
+$btn-font-weight:           $font-weight-bold;
+
+// Forms
+
+$input-height-large:        $btn-lg-height !default;
+$input-border:              $color-gray-03 !default;
+$input-border-focus:        $color-gray-00 !default;
+
+$form-group-margin-bottom:  30px !default;
+
+// Units
+
+$grid:                      20px !default;
+$spacer:                    10px !default;
+
+@import "~bootstrap-sass/assets/stylesheets/bootstrap/variables";
+
+// Responsive utils
+
+$phone-width:               768px !default;
+$tablet-width:              1024px !default;
+$tablet-start:              $phone-width - 1 !default;
+$desktop-start:             $tablet-width + 1 !default;

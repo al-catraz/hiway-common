@@ -1,0 +1,13 @@
+body {
+  -webkit-font-smoothing: antialiased;
+  color: $color-gray-00;
+  font-family: $font-family;
+}
+
+a,
+.btn {
+  &:focus,
+  &:focus:active {
+    outline: 0;
+  }
+}

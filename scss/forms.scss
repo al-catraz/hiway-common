@@ -1,0 +1,92 @@
+label {
+  font-size: $font-size-small;
+  font-weight: $font-weight-normal;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+  margin-right: 3px;
+  margin-top: 2px;
+}
+
+button,
+input[type="file"] {
+  &:focus {
+    outline: 0;
+  }
+}
+
+textarea {
+  resize: none;
+}
+
+.form-group {
+  margin-bottom: $grid / 2;
+
+  &.has-success {
+    .form-control {
+      border-color: $color-green-04;
+      box-shadow: none;
+    }
+  }
+
+  &.has-error {
+    .form-control {
+      border-color: $color-red-00;
+      box-shadow: none;
+    }
+
+    &.radio,
+    &.checkbox {
+      label {
+        color: $color-red-00;
+      }
+    }
+  }
+}
+
+.form-control {
+  @include placeholder($color-gray-02);
+
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border-color: $color-gray-06;
+  border-radius: $btn-border-radius-base;
+  box-shadow: none;
+  font-size: $font-size-h4;
+  height: $grid * 2;
+  padding: 9px $grid / 2;
+
+  &[disabled] {
+    background-color: $color-gray-04 !important;
+    color: $color-gray-01 !important;
+  }
+
+  &:focus {
+    border-color: $color-purple-01 !important;
+    box-shadow: none !important;
+  }
+
+  &.form-control-block {
+    display: block;
+    width: 100%;
+  }
+
+  &.form-control-lg {
+    font-size: $font-size-large;
+    height: $grid * 2.5;
+    padding: 9px 14px;
+  }
+}
+
+@include tablet {
+  label {
+    font-size: $font-size-base;
+  }
+
+  input[type="radio"],
+  input[type="checkbox"] {
+    margin-top: 4px;
+  }
+}

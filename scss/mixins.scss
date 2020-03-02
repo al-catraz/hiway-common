@@ -1,0 +1,75 @@
+@mixin phone {
+	@media (max-width: $phone-width) {
+		@content;
+	}
+}
+
+@mixin tablet {
+	@media (min-width: $tablet-start) and (max-width: $tablet-width) {
+		@content;
+	}
+}
+
+@mixin desktop {
+	@media (min-width: $desktop-start) {
+		@content;
+	}
+}
+
+@mixin text-alignment($size) {
+	@each $alignment in $alignments {
+		.text-#{$size}-#{$alignment} {
+			text-align: $alignment;
+		}
+	}
+}
+
+@mixin block-center($size) {
+	.block-#{$size}-center {
+		margin: 0 auto;
+	}
+}
+
+@mixin offsets($size: '') {
+	@each $offset-name, $offset in $offsets {
+		.offset#{$size}-#{$offset-name} {
+			margin: $offset;
+		}
+
+		.offset#{$size}-top-#{$offset-name} {
+			margin-top: $offset;
+		}
+
+		.offset#{$size}-bottom-#{$offset-name} {
+			margin-bottom: $offset;
+		}
+
+		.offset#{$size}-left-#{$offset-name} {
+			margin-left: $offset;
+		}
+
+		.offset#{$size}-right-#{$offset-name} {
+			margin-right: $offset;
+		}
+
+		.padding#{$size}-#{$offset-name} {
+			padding: $offset;
+		}
+
+		.padding#{$size}-top-#{$offset-name} {
+			padding-top: $offset;
+		}
+
+		.padding#{$size}-bottom-#{$offset-name} {
+			padding-bottom: $offset;
+		}
+
+		.padding#{$size}-left-#{$offset-name} {
+			padding-left: $offset;
+		}
+
+		.padding#{$size}-right-#{$offset-name} {
+			padding-right: $offset;
+		}
+	}
+}
