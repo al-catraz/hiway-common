@@ -1,75 +1,166 @@
+$alignments: center left right justify;
+
+$offsets: (
+  '0': 0,
+  '0-5': ($spacer / 2),
+  '1': $spacer,
+  '1-5': ($spacer * 1.5),
+  '2': ($spacer * 2),
+  '3': ($spacer * 3),
+  '4': ($spacer * 4),
+  '5': ($spacer * 5),
+  '6': ($spacer * 6),
+  '7': ($spacer * 7),
+  '8': ($spacer * 8),
+  '9': ($spacer * 9),
+  '10': ($spacer * 10),
+  '11': ($spacer * 11),
+  '12': ($spacer * 12),
+) !default;
+
 @mixin phone {
-	@media (max-width: $phone-width) {
-		@content;
-	}
+  @media (max-width: $phone-width) {
+    @content;
+  }
 }
 
 @mixin tablet {
-	@media (min-width: $tablet-start) and (max-width: $tablet-width) {
-		@content;
-	}
+  @media (min-width: $tablet-start) and (max-width: $tablet-width) {
+    @content;
+  }
 }
 
 @mixin desktop {
-	@media (min-width: $desktop-start) {
-		@content;
-	}
+  @media (min-width: $desktop-start) {
+    @content;
+  }
 }
 
-@mixin text-alignment($size) {
-	@each $alignment in $alignments {
-		.text-#{$size}-#{$alignment} {
-			text-align: $alignment;
-		}
-	}
+@mixin text-alignment($size: '') {
+  @each $alignment in $alignments {
+    .text#{$size}-#{$alignment} {
+      text-align: $alignment;
+    }
+  }
 }
 
-@mixin block-center($size) {
-	.block-#{$size}-center {
-		margin: 0 auto;
-	}
+@mixin block-center($size: '') {
+  .block#{$size}-center {
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 
 @mixin offsets($size: '') {
-	@each $offset-name, $offset in $offsets {
-		.offset#{$size}-#{$offset-name} {
-			margin: $offset;
-		}
+  @each $offset-name, $offset in $offsets {
+    .offset#{$size}-#{$offset-name} {
+      margin: $offset;
+    }
 
-		.offset#{$size}-top-#{$offset-name} {
-			margin-top: $offset;
-		}
+    .offset#{$size}-top-#{$offset-name} {
+      margin-top: $offset;
+    }
 
-		.offset#{$size}-bottom-#{$offset-name} {
-			margin-bottom: $offset;
-		}
+    .offset#{$size}-bottom-#{$offset-name} {
+      margin-bottom: $offset;
+    }
 
-		.offset#{$size}-left-#{$offset-name} {
-			margin-left: $offset;
-		}
+    .offset#{$size}-left-#{$offset-name} {
+      margin-left: $offset;
+    }
 
-		.offset#{$size}-right-#{$offset-name} {
-			margin-right: $offset;
-		}
+    .offset#{$size}-right-#{$offset-name} {
+      margin-right: $offset;
+    }
 
-		.padding#{$size}-#{$offset-name} {
-			padding: $offset;
-		}
+    .padding#{$size}-#{$offset-name} {
+      padding: $offset;
+    }
 
-		.padding#{$size}-top-#{$offset-name} {
-			padding-top: $offset;
-		}
+    .padding#{$size}-top-#{$offset-name} {
+      padding-top: $offset;
+    }
 
-		.padding#{$size}-bottom-#{$offset-name} {
-			padding-bottom: $offset;
-		}
+    .padding#{$size}-bottom-#{$offset-name} {
+      padding-bottom: $offset;
+    }
 
-		.padding#{$size}-left-#{$offset-name} {
-			padding-left: $offset;
-		}
+    .padding#{$size}-left-#{$offset-name} {
+      padding-left: $offset;
+    }
 
-		.padding#{$size}-right-#{$offset-name} {
-			padding-right: $offset;
-		}
-	}
+    .padding#{$size}-right-#{$offset-name} {
+      padding-right: $offset;
+    }
+  }
+}
+
+@mixin flex($size: '') {
+  .flex#{$size}-auto {
+    flex: 1 0 0%;
+  }
+
+  .flex#{$size}-row {
+    flex-direction: row;
+  }
+
+  .flex#{$size}-row-reverse {
+    flex-direction: row-reverse;
+  }
+
+  .flex#{$size}-column {
+    flex-direction: column;
+  }
+
+  .flex#{$size}-column-reverse {
+    flex-direction: column-reverse;
+  }
+
+  .flex#{$size}-wrap {
+    flex-wrap: wrap;
+  }
+
+  .flex#{$size}-nowrap {
+    flex-wrap: nowrap;
+  }
+
+  .justify-content#{$size}-center {
+    justify-content: center;
+  }
+
+  .justify-content#{$size}-between {
+    justify-content: space-between;
+  }
+
+  .justify-content#{$size}-around {
+    justify-content: space-around;
+  }
+
+  .justify-content#{$size}-start {
+    justify-content: flex-start;
+  }
+
+  .justify-content#{$size}-end {
+    justify-content: flex-end;
+  }
+
+  .align-items#{$size}-center {
+    align-items: center;
+  }
+
+  .align-items#{$size}-baseline {
+    align-items: baseline;
+  }
+
+  .align-items#{$size}-start {
+    align-items: flex-start;
+  }
+
+  .align-items#{$size}-end {
+    align-items: flex-end;
+  }
+
+  .align-items#{$size}-stretch {
+    align-items: stretch;
+  }
 }
