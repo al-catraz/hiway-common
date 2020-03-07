@@ -164,3 +164,33 @@ $offsets: (
     align-items: stretch;
   }
 }
+
+@mixin normalize() {
+  background: none !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  bottom: auto !important;
+  box-shadow: none !important;
+  cursor: auto !important;
+  display: block !important;
+  float: none !important;
+  height: auto !important;
+  left: auto !important;
+  margin: 0 !important;
+  max-height: none !important;
+  max-width: none !important;
+  min-height: auto !important;
+  min-width: auto !important;
+  opacity: 1 !important;
+  outline: none !important;
+  overflow: visible !important;
+  padding: 0 !important;
+  pointer-events: auto !important;
+  position: static !important;
+  right: auto !important;
+  top: auto !important;
+  transition-property: none !important;
+  transform: none !important;
+  visibility: visible !important;
+  width: auto !important;
+}
