@@ -18,150 +18,166 @@ $offsets: (
   '12': ($spacer * 12),
 ) !default;
 
+$font-weights: (
+  'light': $font-weight-light,
+  'normal': $font-weight-normal,
+  'medium': $font-weight-medium,
+  'bold': $font-weight-bold,
+  'heavy': $font-weight-heavy,
+) !default;
+
 @mixin phone {
   @media (max-width: $phone-width) {
-  @content;
+    @content;
   }
 }
 
 @mixin tablet {
   @media (min-width: $tablet-start) and (max-width: $tablet-width) {
-  @content;
+    @content;
   }
 }
 
 @mixin desktop {
   @media (min-width: $desktop-start) {
-  @content;
+    @content;
   }
 }
 
 @mixin text-alignment($size: '') {
   @each $alignment in $alignments {
-  .text#{$size}-#{$alignment} {
-    text-align: $alignment;
-  }
+    .text#{$size}-#{$alignment} {
+      text-align: $alignment;
+    }
   }
 }
 
 @mixin block-center($size: '') {
   .block#{$size}-center {
-  margin-left: auto;
-  margin-right: auto;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 
 @mixin offsets($size: '') {
   @each $offset-name, $offset in $offsets {
-  .offset#{$size}-#{$offset-name} {
-    margin: $offset;
-  }
+    .offset#{$size}-#{$offset-name} {
+      margin: $offset;
+    }
 
-  .offset#{$size}-top-#{$offset-name} {
-    margin-top: $offset;
-  }
+    .offset#{$size}-top-#{$offset-name} {
+      margin-top: $offset;
+    }
 
-  .offset#{$size}-bottom-#{$offset-name} {
-    margin-bottom: $offset;
-  }
+    .offset#{$size}-bottom-#{$offset-name} {
+      margin-bottom: $offset;
+    }
 
-  .offset#{$size}-left-#{$offset-name} {
-    margin-left: $offset;
-  }
+    .offset#{$size}-left-#{$offset-name} {
+      margin-left: $offset;
+    }
 
-  .offset#{$size}-right-#{$offset-name} {
-    margin-right: $offset;
-  }
+    .offset#{$size}-right-#{$offset-name} {
+      margin-right: $offset;
+    }
 
-  .padding#{$size}-#{$offset-name} {
-    padding: $offset;
-  }
+    .padding#{$size}-#{$offset-name} {
+      padding: $offset;
+    }
 
-  .padding#{$size}-top-#{$offset-name} {
-    padding-top: $offset;
-  }
+    .padding#{$size}-top-#{$offset-name} {
+      padding-top: $offset;
+    }
 
-  .padding#{$size}-bottom-#{$offset-name} {
-    padding-bottom: $offset;
-  }
+    .padding#{$size}-bottom-#{$offset-name} {
+      padding-bottom: $offset;
+    }
 
-  .padding#{$size}-left-#{$offset-name} {
-    padding-left: $offset;
-  }
+    .padding#{$size}-left-#{$offset-name} {
+      padding-left: $offset;
+    }
 
-  .padding#{$size}-right-#{$offset-name} {
-    padding-right: $offset;
-  }
+    .padding#{$size}-right-#{$offset-name} {
+      padding-right: $offset;
+    }
   }
 }
 
 @mixin flex($size: '') {
   .flex#{$size}-auto {
-  flex: 1 0 0%;
+    flex: 1 0 0%;
   }
 
   .flex#{$size}-row {
-  flex-direction: row;
+    flex-direction: row;
   }
 
   .flex#{$size}-row-reverse {
-  flex-direction: row-reverse;
+    flex-direction: row-reverse;
   }
 
   .flex#{$size}-column {
-  flex-direction: column;
+    flex-direction: column;
   }
 
   .flex#{$size}-column-reverse {
-  flex-direction: column-reverse;
+    flex-direction: column-reverse;
   }
 
   .flex#{$size}-wrap {
-  flex-wrap: wrap;
+    flex-wrap: wrap;
   }
 
   .flex#{$size}-nowrap {
-  flex-wrap: nowrap;
+    flex-wrap: nowrap;
   }
 
   .justify-content#{$size}-center {
-  justify-content: center;
+    justify-content: center;
   }
 
   .justify-content#{$size}-between {
-  justify-content: space-between;
+    justify-content: space-between;
   }
 
   .justify-content#{$size}-around {
-  justify-content: space-around;
+    justify-content: space-around;
   }
 
   .justify-content#{$size}-start {
-  justify-content: flex-start;
+    justify-content: flex-start;
   }
 
   .justify-content#{$size}-end {
-  justify-content: flex-end;
+    justify-content: flex-end;
   }
 
   .align-items#{$size}-center {
-  align-items: center;
+    align-items: center;
   }
 
   .align-items#{$size}-baseline {
-  align-items: baseline;
+    align-items: baseline;
   }
 
   .align-items#{$size}-start {
-  align-items: flex-start;
+    align-items: flex-start;
   }
 
   .align-items#{$size}-end {
-  align-items: flex-end;
+    align-items: flex-end;
   }
 
   .align-items#{$size}-stretch {
-  align-items: stretch;
+    align-items: stretch;
+  }
+}
+
+@mixin font-weights() {
+  @each $weight-name, $weight-value in $font-weights {
+    .font-weight-#{$weight-name} {
+      font-weight: $weight-value;
+    }
   }
 }
 
@@ -217,7 +233,7 @@ $offsets: (
   position: static !important;
   right: auto !important;
   top: auto !important;
-  transition-property: none !important;
+  transition: none !important;
   transform: none !important;
   visibility: visible !important;
   width: auto !important;
