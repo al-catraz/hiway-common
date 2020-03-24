@@ -45,11 +45,11 @@
     &:active:hover,
     &:active:focus,
     &[disabled]:hover {
-      background-color: $color-purple-03;
+      background-color: $color-purple-02;
     }
 
     &:hover {
-      background-color: lighten($color-purple-03, 5%);
+      background-color: lighten($color-purple-02, 5%);
     }
 
     .btn-loader {
