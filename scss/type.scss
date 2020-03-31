@@ -1,6 +1,22 @@
 @include font-weights();
 
+@include text-emphasis-variant('.text-white', $color-white);
+@include text-emphasis-variant('.text-black', $color-black);
 @include text-emphasis-variant('.text-gray-00', $color-gray-00);
 @include text-emphasis-variant('.text-gray-01', $color-gray-01);
+@include text-emphasis-variant('.text-gray-02', $color-gray-02);
+@include text-emphasis-variant('.text-gray-03', $color-gray-03);
+@include text-emphasis-variant('.text-gray-04', $color-gray-04);
+@include text-emphasis-variant('.text-gray-05', $color-gray-05);
+@include text-emphasis-variant('.text-gray-06', $color-gray-06);
+@include text-emphasis-variant('.text-green-00', $color-green-00);
 @include text-emphasis-variant('.text-green-01', $color-green-01);
+@include text-emphasis-variant('.text-green-02', $color-green-02);
+@include text-emphasis-variant('.text-green-03', $color-green-03);
+@include text-emphasis-variant('.text-green-04', $color-green-04);
+@include text-emphasis-variant('.text-purple-00', $color-purple-00);
+@include text-emphasis-variant('.text-purple-01', $color-purple-01);
 @include text-emphasis-variant('.text-purple-02', $color-purple-02);
+@include text-emphasis-variant('.text-pink-00', $color-pink-00);
+@include text-emphasis-variant('.text-red-00', $color-red-00);
+@include text-emphasis-variant('.text-blue-00', $color-blue-00);
