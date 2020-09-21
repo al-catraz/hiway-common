@@ -51,7 +51,7 @@ textarea {
   }
 
   &:focus {
-    border-color: $color-purple-01 !important;
+    border: 2px solid $color-gray-00;
     box-shadow: none !important;
   }
 

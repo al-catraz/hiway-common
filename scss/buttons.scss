@@ -25,11 +25,11 @@
     &:active:focus,
     &[disabled]:hover {
       background-color: $color-gray-03;
-      color: $color-gray-01;
+      color: $color-gray-00;
     }
 
     &:hover {
-      background-color: lighten($color-gray-03, 2%);
+      background-color: $color-gray-06;
     }
 
     .btn-loader {
@@ -50,6 +50,27 @@
 
     &:hover {
       background-color: lighten($color-purple-02, 5%);
+    }
+
+    .btn-loader {
+      color: $color-white;
+    }
+  }
+
+  &-dark {
+    &,
+    &:hover,
+    &:focus,
+    &:active,
+    &:active:hover,
+    &:active:focus,
+    &[disabled]:hover {
+      background-color: $color-gray-00;
+      color: $color-white;
+    }
+
+    &:hover {
+      background-color: lighten($color-gray-00, 20%);
     }
 
     .btn-loader {
