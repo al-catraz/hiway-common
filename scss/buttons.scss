@@ -1,7 +1,14 @@
 .btn {
+  -ms-flex-align: center;
+  align-items: center;
   border-color: transparent;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -ms-flex-pack: center;
+  justify-content: center;
   position: relative;
   transition: all 0.2s;
+  white-space: nowrap;
 
   &:hover,
   &:focus,
