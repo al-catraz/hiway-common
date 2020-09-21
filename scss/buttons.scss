@@ -156,47 +156,8 @@
 
   // Loaders
 
-  .btn-loader {
-    &,
-    &:before,
-    &:after {
-      @include square(2.5em);
-
-      animation: button-loader 1.8s infinite ease-in-out;
-      animation-fill-mode: both;
-      border-radius: 50%;
-    }
-  }
-
-  &.btn-loading {
+  &-loading {
     color: transparent !important;
-  }
-
-  .btn-loader {
-    animation-delay: -0.16s;
-    display: inline-block;
-    font-size: 4px;
-    left: 50%;
-    position: absolute;
-    text-indent: -9999em;
-    top: 2px;
-    transform: translateX(-50%);
-
-    &:before {
-      animation-delay: -0.32s;
-      left: -3.5em;
-    }
-
-    &:after {
-      left: 3.5em;
-    }
-
-    &:before,
-    &:after {
-      content: '';
-      position: absolute;
-      top: 0;
-    }
   }
 
   // Utils
