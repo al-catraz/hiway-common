@@ -4,6 +4,8 @@ body {
 
 a,
 .btn {
+  cursor: pointer;
+
   &:focus,
   &:focus:active {
     outline: 0;
