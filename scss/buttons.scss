@@ -127,6 +127,18 @@
     }
   }
 
+  &-transparent {
+    &,
+    &:hover,
+    &:focus,
+    &:active,
+    &:active:hover,
+    &:active:focus,
+    &[disabled]:hover {
+      background-color: transparent;
+    }
+  }
+
   // Sizes
 
   &-sm {
