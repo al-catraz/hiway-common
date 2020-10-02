@@ -16,6 +16,10 @@
       @include square(16px);
     }
 
+    &--20 {
+      @include square(20px);
+    }
+
     &--24 {
       @include square(24px);
     }
