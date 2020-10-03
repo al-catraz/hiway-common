@@ -39,7 +39,7 @@
       background-color: $color-gray-06;
     }
 
-    .btn-loader {
+    .loader {
       color: $color-gray-02;
     }
   }
@@ -59,7 +59,7 @@
       background-color: lighten($color-purple-02, 5%);
     }
 
-    .btn-loader {
+    .loader {
       color: $color-white;
     }
   }
@@ -80,7 +80,7 @@
       background-color: lighten($color-gray-00, 20%);
     }
 
-    .btn-loader {
+    .loader {
       color: $color-white;
     }
   }
@@ -101,7 +101,7 @@
       background-color: lighten($color-green-03, 4%);
     }
 
-    .btn-loader {
+    .loader {
       color: $color-green-00;
     }
   }
@@ -122,7 +122,7 @@
       background-color: lighten($color-pink-00, 3%);
     }
 
-    .btn-loader {
+    .loader {
       color: $color-red-00;
     }
   }
@@ -145,11 +145,9 @@
     padding-left: 10px;
     padding-right: 10px;
 
-    &.btn-loading {
-      .btn-loader {
-        font-size: 2px;
-        top: 6px;
-      }
+    .loader {
+      font-size: 2px;
+      top: 7px;
     }
   }
 
@@ -158,11 +156,9 @@
     font-size: $font-size-large;
     padding: 13px 23px;
 
-    &.btn-loading {
-      .btn-loader {
-        font-size: 6px;
-        top: 2px;
-      }
+    .loader {
+      font-size: 6px;
+      top: 4px;
     }
   }
 
@@ -170,12 +166,20 @@
 
   &-loading {
     color: transparent !important;
+
+    .icon {
+      fill: transparent;
+    }
   }
 
   // Utils
 
   &-set {
     font-size: 0;
+  }
+
+  .icon {
+    transition: all 0.2s;
   }
 }
 
