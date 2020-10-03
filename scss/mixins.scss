@@ -62,43 +62,43 @@ $font-weights: (
 @mixin offsets($size: '') {
   @each $offset-name, $offset in $offsets {
     .offset#{$size}-#{$offset-name} {
-      margin: $offset;
+      margin: $offset !important;
     }
 
     .offset#{$size}-top-#{$offset-name} {
-      margin-top: $offset;
+      margin-top: $offset !important;
     }
 
     .offset#{$size}-bottom-#{$offset-name} {
-      margin-bottom: $offset;
+      margin-bottom: $offset !important;
     }
 
     .offset#{$size}-left-#{$offset-name} {
-      margin-left: $offset;
+      margin-left: $offset !important;
     }
 
     .offset#{$size}-right-#{$offset-name} {
-      margin-right: $offset;
+      margin-right: $offset !important;
     }
 
     .padding#{$size}-#{$offset-name} {
-      padding: $offset;
+      padding: $offset !important;
     }
 
     .padding#{$size}-top-#{$offset-name} {
-      padding-top: $offset;
+      padding-top: $offset !important;
     }
 
     .padding#{$size}-bottom-#{$offset-name} {
-      padding-bottom: $offset;
+      padding-bottom: $offset !important;
     }
 
     .padding#{$size}-left-#{$offset-name} {
-      padding-left: $offset;
+      padding-left: $offset !important;
     }
 
     .padding#{$size}-right-#{$offset-name} {
-      padding-right: $offset;
+      padding-right: $offset !important;
     }
   }
 }
@@ -176,7 +176,7 @@ $font-weights: (
 @mixin font-weights() {
   @each $weight-name, $weight-value in $font-weights {
     .font-weight-#{$weight-name} {
-      font-weight: $weight-value;
+      font-weight: $weight-value !important;
     }
   }
 }
