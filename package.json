@@ -1,8 +1,6 @@
 {
   "name": "hiway-common",
   "version": "1.0.0",
-  "main": "js/index.js",
-  "module": "./js/index.js",
   "dependencies": {
     "bootstrap-sass": "^3.4.1"
   }
