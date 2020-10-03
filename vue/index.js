@@ -1,4 +1,4 @@
-import HiwayButton from './HiwayButton';
+import HiwayButton from './HiwayButton.vue';
 
 export {
   HiwayButton,
