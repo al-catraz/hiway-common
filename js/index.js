@@ -1,3 +1,5 @@
+import HiwayButton from '../vue/HiwayButton';
+
 (function (global, factory) {
   typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports) :
   typeof define === 'function' && define.amd ? define(['exports'], factory) :
@@ -35,6 +37,7 @@
 
   exports.castVariable = castVariable;
   exports.getUID = getUID;
+  exports.HiwayButton = HiwayButton;
 
   Object.defineProperty(exports, '__esModule', { value: true });
 }));
