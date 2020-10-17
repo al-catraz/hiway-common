@@ -10,6 +10,10 @@
   transition: all 0.2s;
   white-space: nowrap;
 
+  &:active {
+    transform: scale(0.9);
+  }
+
   &:hover,
   &:focus,
   &:active,
@@ -28,14 +32,14 @@
     &:hover,
     &:focus,
     &:active,
-    &:active:hover,
-    &:active:focus,
     &[disabled]:hover {
       background-color: $color-gray-03;
       color: $color-gray-00;
     }
 
-    &:hover {
+    &:hover,
+    &:active:hover,
+    &:active:focus {
       background-color: $color-gray-06;
     }
 
@@ -49,35 +53,15 @@
     &:hover,
     &:focus,
     &:active,
-    &:active:hover,
-    &:active:focus,
     &[disabled]:hover {
       background-color: $color-purple-02;
+      font-weight: $font-weight-medium;
     }
 
-    &:hover {
-      background-color: lighten($color-purple-02, 5%);
-    }
-
-    .loader {
-      color: $color-white;
-    }
-  }
-
-  &-dark {
-    &,
     &:hover,
-    &:focus,
-    &:active,
     &:active:hover,
-    &:active:focus,
-    &[disabled]:hover {
-      background-color: $color-gray-00;
-      color: $color-white;
-    }
-
-    &:hover {
-      background-color: lighten($color-gray-00, 20%);
+    &:active:focus {
+      background-color: $color-purple-01;
     }
 
     .loader {
@@ -90,15 +74,16 @@
     &:hover,
     &:focus,
     &:active,
-    &:active:hover,
-    &:active:focus,
     &[disabled]:hover {
       background-color: $color-green-03;
       color: $color-green-00;
     }
 
-    &:hover {
+    &:hover,
+    &:active:hover,
+    &:active:focus {
       background-color: lighten($color-green-03, 4%);
+      color: $color-green-00;
     }
 
     .loader {
@@ -111,15 +96,16 @@
     &:hover,
     &:focus,
     &:active,
-    &:active:hover,
-    &:active:focus,
     &[disabled]:hover {
       background-color: $color-pink-00;
       color: $color-red-00;
     }
 
-    &:hover {
+    &:hover,
+    &:active:hover,
+    &:active:focus {
       background-color: lighten($color-pink-00, 3%);
+      color: $color-red-00;
     }
 
     .loader {
@@ -132,16 +118,19 @@
     &:hover,
     &:focus,
     &:active,
-    &:active:hover,
-    &:active:focus,
     &[disabled]:hover {
       background-color: transparent;
+    }
+
+    .loader {
+      color: $color-gray-01;
     }
   }
 
   // Sizes
 
   &-sm {
+    font-size: $font-size-small;
     padding-left: 10px;
     padding-right: 10px;
 

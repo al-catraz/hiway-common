@@ -15,8 +15,11 @@ textarea {
     }
 
     .form-control {
-      border-color: $color-green-04;
       box-shadow: none;
+
+      &:hover {
+        box-shadow: 0 0 0 1px $color-green-04;
+      }
     }
   }
 
@@ -26,14 +29,17 @@ textarea {
     }
 
     .form-control {
-      border-color: $color-red-00;
       box-shadow: none;
+
+      &:hover {
+        box-shadow: 0 0 0 1px $color-red-00;
+      }
     }
   }
 }
 
 .form-control {
-  @include placeholder($color-gray-02);
+  @include placeholder($color-gray-05);
 
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -41,7 +47,6 @@ textarea {
   border-color: $color-gray-06;
   border-radius: $btn-border-radius-base;
   box-shadow: none;
-  font-size: $font-size-h4;
   height: $grid * 2;
   padding: 9px $grid / 2;
 
@@ -50,9 +55,12 @@ textarea {
     color: $color-gray-01 !important;
   }
 
+  &:hover {
+    border-color: $color-gray-02;
+  }
+
   &:focus {
-    border: 2px solid $color-gray-00;
-    box-shadow: none !important;
+    box-shadow: 0 0 0 1px $color-gray-00;
   }
 
   &-sm {
