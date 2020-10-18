@@ -80,6 +80,10 @@ $input-border-focus:        $color-gray-00 !default;
 
 $form-group-margin-bottom:  30px !default;
 
+// Dropdowns
+
+$dropdown-line-height:      floor(($line-height-computed * 1.4546)) !default;
+
 // Units
 
 $grid:                      20px !default;

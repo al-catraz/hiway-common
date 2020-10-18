@@ -26,18 +26,6 @@
 		}
 	}
 
-	&.text-danger {
-		color: $brand-danger;
-	}
-
-	&.text-warning {
-		color: $brand-warning;
-	}
-
-	&.text-success {
-		color: $brand-success;
-	}
-
 	&.text-muted {
 		color: $gray-dark;
 	}
@@ -62,8 +50,8 @@
 		display: flex;
 	}
 
-	> .dropdown-toggle .svg-icon:last-child {
-		@extend .flip-vertical;
+	> .dropdown-toggle .icon {
+		transform: scaleY(-1);
 	}
 }
 
@@ -71,14 +59,14 @@
 	display: inline-flex;
 	justify-content: space-between;
 
-	.svg-icon__caret {
+	.icon {
 		transition: transform .35s ease-out;
 	}
 }
 
 .dropdown-menu {
 	flex-direction: column;
-	@include box-shadow($box-shadow-base);
+	box-shadow: rgba($color-black, 0.1);
 
 	@media (max-width: $screen-sm-max) {
 		max-width: 100%;
@@ -149,10 +137,9 @@
 	padding: 6px 15px;
 }
 
-.dropup,
-.navbar-fixed-bottom .dropdown {
+.dropup {
 	.dropdown-toggle {
-		.svg-icon {
+		.icon {
 			@include rotate(180deg);
 		}
 	}
