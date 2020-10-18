@@ -118,21 +118,6 @@ export default {
       }
     },
 
-    dropdownToggleDefaultContent(createElement) {
-      if (this.$slots.toggle) {
-        return null;
-      }
-
-      return createElement(
-        HiwayIconCaret,
-        {
-          attrs: {
-            size: 12,
-          },
-        },
-      );
-    },
-
     dropdownToggle(createElement) {
       const vm = this;
 
@@ -154,7 +139,6 @@ export default {
           },
         },
         [
-          this.dropdownToggleDefaultContent(createElement),
           this.$slots.toggle,
         ],
       );

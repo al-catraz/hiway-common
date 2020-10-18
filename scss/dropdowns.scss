@@ -47,15 +47,6 @@
 		cursor: $cursor-disabled;
 	}
 
-	&.icon-offset {
-		padding-left: $dropdown-icon-size-md + map-get($offsets, '1-5');
-	}
-
-	.svg-icon {
-		height: $dropdown-icon-size-md;
-		width: $dropdown-icon-size-md;
-	}
-
 	.to-left {
 		order: -1;
 	}

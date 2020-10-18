@@ -54,11 +54,6 @@ export default {
       type: String,
       default: 'left',
     },
-    iconOffset: {
-      required: false,
-      type: Boolean,
-      default: false,
-    },
   },
 
   methods: {
@@ -107,13 +102,12 @@ export default {
   },
 
   render(createElement) {
-    const { active, color, disabled, exact, iconOffset, to } = this;
+    const { active, color, disabled, exact, to } = this;
     const content = this.prepareContent(createElement);
     const classes = [{
       active,
       disabled,
       'text-muted': disabled,
-      'icon-offset': iconOffset,
       'dropdown-item': true,
     }];
 
