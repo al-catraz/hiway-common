@@ -1,0 +1,168 @@
+//
+// Dropdown menus
+// Edited by DocPlanner
+// --------------------------------------------------
+
+//
+// Dropdown menus
+// --------------------------------------------------
+%drop-down-item {
+	&:hover,
+	&:focus {
+		background-color: $dropdown-link-hover-bg;
+		color: $dropdown-link-hover-color;
+		text-decoration: none;
+	}
+
+	&.active {
+		&,
+		&:hover,
+		&:focus {
+			background-color: $dropdown-link-active-bg;
+			color: $dropdown-link-active-color;
+			font-weight: bold;
+			outline: 0;
+			text-decoration: none;
+		}
+	}
+
+	&.text-danger {
+		color: $brand-danger;
+	}
+
+	&.text-warning {
+		color: $brand-warning;
+	}
+
+	&.text-success {
+		color: $brand-success;
+	}
+
+	&.text-muted {
+		color: $gray-dark;
+	}
+
+	&.disabled {
+		background-color: transparent;
+		cursor: $cursor-disabled;
+	}
+
+	&.icon-offset {
+		padding-left: $dropdown-icon-size-md + map-get($offsets, '1-5');
+	}
+
+	.svg-icon {
+		height: $dropdown-icon-size-md;
+		width: $dropdown-icon-size-md;
+	}
+
+	.to-left {
+		order: -1;
+	}
+
+	.to-right {
+		margin-left: auto;
+		order: 9999;
+	}
+}
+
+.open {
+	> .dropdown-menu {
+		display: flex;
+	}
+
+	> .dropdown-toggle .svg-icon:last-child {
+		@extend .flip-vertical;
+	}
+}
+
+.dropdown-toggle.btn {
+	display: inline-flex;
+	justify-content: space-between;
+
+	.svg-icon__caret {
+		transition: transform .35s ease-out;
+	}
+}
+
+.dropdown-menu {
+	flex-direction: column;
+	@include box-shadow($box-shadow-base);
+
+	@media (max-width: $screen-sm-max) {
+		max-width: 100%;
+	}
+
+	&-scrollable {
+		height: auto;
+		max-height: 420px;
+		-webkit-overflow-scrolling: touch;
+		overflow-x: hidden;
+	}
+
+	hr,
+	.divider {
+		margin: 5px 0;
+	}
+
+	&.dropdown-menu-top {
+		bottom: 100%;
+		margin: 0 0 2px 0;
+		top: auto;
+	}
+
+	// START: DEPRECATED
+
+	> li > a {
+		align-items: center;
+		display: inline-flex;
+		line-height: $dropdown-line-height;
+		padding: 4px 15px;
+		width: 100%;
+
+		@extend %drop-down-item;
+	}
+
+	> .active > a {
+		font-weight: bold;
+	}
+
+	> .icon-offset > a {
+		padding-left: 43px;
+	}
+
+	// END: DEPRECATED
+}
+
+.dropdown-item {
+	align-items: center;
+	clear: both;
+	color: $dropdown-link-color;
+	cursor: pointer;
+	display: flex;
+	flex-shrink: 0;
+	font-weight: 400;
+	line-height: $dropdown-line-height;
+	white-space: nowrap;
+	width: 100%;
+
+	@extend %drop-down-item;
+
+	> .dropdown-item-text {
+		flex-grow: 1;
+		padding: 4px map-get($offsets, '1-5');
+	}
+}
+
+.dropdown-header {
+	padding: 6px 15px;
+}
+
+.dropup,
+.navbar-fixed-bottom .dropdown {
+	.dropdown-toggle {
+		.svg-icon {
+			@include rotate(180deg);
+		}
+	}
+}
