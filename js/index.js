@@ -1,8 +1,15 @@
+/* global define */
 (function (global, factory) {
-  typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports) :
-  typeof define === 'function' && define.amd ? define(['exports'], factory) :
-  (global = global || self, factory(global.acorn = {}));
-}(this, function (exports) {
+  if (typeof exports === 'object' && typeof module !== 'undefined') {
+    factory(exports);
+  } else if (typeof define === 'function' && define.amd) {
+    define(['exports'], factory);
+  } else {
+    global = global || window;
+
+    factory(global.acorn = {});
+  }
+}(this, function (exports) { // eslint-disable-line prefer-arrow-callback
   function castVariable(variable) {
     let isJson = false;
 
@@ -27,8 +34,9 @@
 
   function getUID() {
     function S4() {
-       return (((1 + Math.random()) * 0x10000) | 0).toString(16).substring(1);
-    };
+      // eslint-disable-next-line no-bitwise
+      return (((1 + Math.random()) * 0x10000) | 0).toString(16).substring(1);
+    }
 
     return S4() + S4() + S4() + S4();
   }

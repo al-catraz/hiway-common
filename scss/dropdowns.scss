@@ -3,8 +3,10 @@
     display: flex;
   }
 
-  > .dropdown-toggle .icon {
-    transform: scaleY(-1);
+  > .dropdown-toggle {
+      .icon {
+      transform: scaleY(-1);
+    }
   }
 }
 
@@ -12,14 +14,11 @@
   &.btn {
     display: inline-flex;
     justify-content: space-between;
-
-    .icon {
-      transition: transform .35s ease-out;
-    }
   }
 }
 
 .dropdown-menu {
+  border-color: rgba($color-gray-01, 0.12);
   border-radius: $border-radius-base;
   box-shadow: 0 10px 14px rgba($color-black, 0.1);
   flex-direction: column;
