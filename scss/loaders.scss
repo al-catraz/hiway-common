@@ -1,16 +1,4 @@
 .loader {
-  &,
-  &:before,
-  &:after {
-    @include square(2.5em);
-
-    animation: loader 1s infinite ease-in-out;
-    animation-fill-mode: both;
-    border-radius: 50%;
-  }
-}
-
-.loader {
   animation-delay: -0.16s;
   color: $color-gray-03;
   display: inline-block;
@@ -20,6 +8,16 @@
   text-indent: -9999em;
   top: 3px;
   transform: translateX(-50%);
+
+  &,
+  &:before,
+  &:after {
+    @include square(2.5em);
+
+    animation: loader 1s infinite ease-in-out;
+    animation-fill-mode: both;
+    border-radius: 50%;
+  }
 
   &:before {
     animation-delay: -0.32s;

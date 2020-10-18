@@ -2,52 +2,52 @@
   display: flex;
   overflow: initial;
 
-	> .pull-right {
-		order: 10000;
-	}
+  > .pull-right {
+    order: 10000;
+  }
 
-	> .pull-left {
-		order: -10000;
-	}
+  > .pull-left {
+    order: -10000;
+  }
 }
 
 .media-body {
-	flex-grow: 1;
-	width: auto;
+  flex-grow: 1;
+  width: auto;
 }
 
 .media-left,
 .media-right,
 .media-body {
-	display: block;
+  display: block;
 }
 
 .media-middle {
-	align-self: center;
+  align-self: center;
 }
 
 .media-bottom {
-	align-self: flex-end;
+  align-self: flex-end;
 }
 
 .media-vertical {
-	@include media-vertical();
+  @include media-vertical();
 }
 
 @include phone {
-	.media-xs-vertical {
-		@include media-vertical();
-	}
+  .media-xs-vertical {
+    @include media-vertical();
+  }
 }
 
 @include tablet {
-	.media-sm-vertical {
-		@include media-vertical();
-	}
+  .media-sm-vertical {
+    @include media-vertical();
+  }
 }
 
 @include desktop {
-	.media-md-vertical {
-		@include media-vertical();
-	}
+  .media-md-vertical {
+    @include media-vertical();
+  }
 }

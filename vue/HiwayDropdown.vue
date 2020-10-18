@@ -1,5 +1,4 @@
 <script>
-import HiwayIconCaret from './HiwayIconCaret.vue';
 import HiwayDropdownItem from './HiwayDropdownItem.vue';
 
 const hasWindow = typeof window !== 'undefined';
@@ -11,65 +10,44 @@ export default {
   name: 'HiwayDropdown',
 
   components: {
-    HiwayIconCaret,
     HiwayDropdownItem,
   },
 
   props: {
-    /**
-     * @values HTML tag name (div, ul)
-     * @default div
-     * */
-    tag: {
-      required: false,
-      type: String,
-      default: 'div',
-    },
-    /**
-     * @values HTML tag name or component name, (span, a, dp-button)
-     * @default a
-     * */
-    toggleTag: {
-      required: false,
-      type: String,
-      default: 'a',
-    },
-    /**
-     * @values 'btn btn-primary' | ['btn', 'btn-primary'] | { btn: true, 'btn-primary': true }
-     * */
-    toggleClass: {
-      required: false,
-      type: [String, Array, Object],
-      default: '',
-    },
-    /**
-     * @values See at 'HiwayDropdownItem' props
-     * */
     items: {
       required: false,
       type: Array,
       default: () => [],
     },
-    /**
-     * @values bottom, top
-     * */
-    menuPosition: {
-      type: String,
-      required: false,
-      default: 'bottom',
-    },
-    /**
-     * @values left, right
-     * */
     menuAlignment: {
       type: String,
       required: false,
       default: 'left',
     },
+    menuPosition: {
+      type: String,
+      required: false,
+      default: 'bottom',
+    },
     scrollable: {
       required: false,
       type: Boolean,
       default: false,
+    },
+    tag: {
+      required: false,
+      type: String,
+      default: 'div',
+    },
+    toggleClass: {
+      required: false,
+      type: [String, Array, Object],
+      default: '',
+    },
+    toggleTag: {
+      required: false,
+      type: String,
+      default: 'a',
     },
   },
 
@@ -86,10 +64,6 @@ export default {
   },
 
   methods: {
-    tearDownListeners() {
-      events.forEach((evt) => document.removeEventListener(evt, this.clickOutside));
-    },
-
     clickOutside(event) {
       const { target } = event;
       const { dropdownMenu, dropdownToggle } = this.$refs;
@@ -106,46 +80,26 @@ export default {
       }
     },
 
-    toggle() {
-      this.open = !this.open;
-
-      if (this.open) {
-        this.$parent.$emit('onopen');
-        events.forEach((evt) => document.addEventListener(evt, this.clickOutside));
-      } else {
-        this.$parent.$emit('onclose');
-        this.tearDownListeners();
-      }
-    },
-
-    dropdownToggle(createElement) {
-      const vm = this;
-
-      return createElement(
-        this.toggleTag,
-        {
-          ref: 'dropdownToggle',
-          class: ['dropdown-toggle btn-icon-on-right', this.toggleClass],
-          attrs: {
-            href: this.toggleTag === 'a' ? '#' : null,
-            'aria-haspopup': 'true',
-            'aria-expanded': this.open,
-          },
-          on: {
-            click(e) {
-              e.preventDefault();
-              vm.toggle();
-            },
-          },
-        },
-        [
-          this.$slots.toggle,
-        ],
-      );
-    },
-
     closeDropdown(payload) {
       this.$emit('close', payload);
+    },
+
+    dropdownMenu(createElement) {
+      return createElement(
+        'div',
+        {
+          class: {
+            'dropdown-menu': true,
+            'dropdown-menu-right': this.menuAlignment === 'right',
+            'dropdown-menu-scrollable': this.scrollable,
+            'dropdown-menu-top': this.menuPosition === 'top',
+          },
+          ref: 'dropdownMenu',
+        },
+        [
+          this.dropdownMenuContent(createElement),
+        ],
+      );
     },
 
     dropdownMenuContent(createElement) {
@@ -169,7 +123,7 @@ export default {
       return this
         .items
         .map((props) => {
-          let component = HiwayDropdownItem;
+          const component = HiwayDropdownItem;
 
           if (props.type === 'separator') {
             return separator;
@@ -179,22 +133,46 @@ export default {
         });
     },
 
-    dropdownMenu(createElement) {
+    dropdownToggle(createElement) {
+      const vm = this;
+
       return createElement(
-        'div',
+        this.toggleTag,
         {
-          ref: 'dropdownMenu',
-          class: {
-            'dropdown-menu': true,
-            'dropdown-menu-scrollable': this.scrollable,
-            'dropdown-menu-top': this.menuPosition === 'top',
-            'dropdown-menu-right': this.menuAlignment === 'right',
+          attrs: {
+            'aria-expanded': this.open,
+            'aria-haspopup': 'true',
+            href: this.toggleTag === 'a' ? '#' : null,
           },
+          class: ['dropdown-toggle btn-icon-on-right', this.toggleClass],
+          on: {
+            click(e) {
+              e.preventDefault();
+              vm.toggle();
+            },
+          },
+          ref: 'dropdownToggle',
         },
         [
-          this.dropdownMenuContent(createElement),
+          this.$slots.toggle,
         ],
       );
+    },
+
+    tearDownListeners() {
+      events.forEach((evt) => document.removeEventListener(evt, this.clickOutside));
+    },
+
+    toggle() {
+      this.open = !this.open;
+
+      if (this.open) {
+        this.$parent.$emit('onopen');
+        events.forEach((evt) => document.addEventListener(evt, this.clickOutside));
+      } else {
+        this.$parent.$emit('onclose');
+        this.tearDownListeners();
+      }
     },
   },
 

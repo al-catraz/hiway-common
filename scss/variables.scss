@@ -29,6 +29,7 @@ $link-hover-color:          $color-blue-00 !default;
 
 // Borders
 
+$border-radius-base:        6px !default;
 $border-radius-box:         5px !default;
 $border-solid-dark:         1px solid $color-gray-02 !default;
 $border-solid:              1px solid $color-gray-03 !default;
@@ -83,6 +84,8 @@ $form-group-margin-bottom:  30px !default;
 // Dropdowns
 
 $dropdown-line-height:      floor(($line-height-computed * 1.4546)) !default;
+$dropdown-link-hover-bg:    $color-gray-03;
+$dropdown-link-hover-color: $color-gray-00;
 
 // Units
 

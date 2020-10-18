@@ -21,9 +21,45 @@
 @include text-emphasis-variant('.text-red-00', $color-red-00);
 @include text-emphasis-variant('.text-blue-00', $color-blue-00);
 
-h1, .h1 { line-height: $line-height-h1; }
-h2, .h2 { line-height: $line-height-h2; }
-h3, .h3 { line-height: $line-height-h3; }
-h4, .h4 { line-height: $line-height-h4; }
-h5, .h5 { line-height: $line-height-h5; }
-h6, .h6 { line-height: $line-height-h6; }
+.text-decoration-none {
+  &,
+  &:hover,
+  &:focus {
+    text-decoration: none;
+  }
+}
+
+.text-ellipsis {
+  @include text-overflow;
+}
+
+h1,
+.h1 {
+  line-height: $line-height-h1;
+}
+
+h2,
+.h2 {
+  line-height: $line-height-h2;
+}
+
+h3,
+.h3 {
+  line-height: $line-height-h3;
+}
+
+h4,
+.h4 {
+  line-height: $line-height-h4;
+}
+
+h5,
+.h5 {
+  line-height: $line-height-h5;
+}
+
+h6,
+.h6 {
+  line-height: $line-height-h6;
+}
+

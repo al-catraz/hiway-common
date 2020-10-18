@@ -3,35 +3,22 @@ export default {
   name: 'HiwayDropdownItem',
 
   props: {
-    text: {
-      required: true,
-      type: String,
-      default: '',
+    active: {
+      required: false,
+      type: Boolean,
+      default: false,
     },
     additionalText: {
       required: false,
       type: String,
       default: '',
     },
-    /**
-     * @default default
-     * */
     color: {
       required: false,
       type: String,
       default: 'default',
     },
-    href: {
-      required: false,
-      type: String,
-      default: null,
-    },
-    to: {
-      required: false,
-      type: [String, Object],
-      default: null,
-    },
-    active: {
+    disabled: {
       required: false,
       type: Boolean,
       default: false,
@@ -41,18 +28,25 @@ export default {
       type: Boolean,
       default: false,
     },
-    disabled: {
+    href: {
       required: false,
-      type: Boolean,
-      default: false,
+      type: String,
+      default: null,
     },
-    /**
-     * @default left
-     * */
     iconPosition: {
       required: false,
       type: String,
       default: 'left',
+    },
+    text: {
+      required: true,
+      type: String,
+      default: '',
+    },
+    to: {
+      required: false,
+      type: [String, Object],
+      default: null,
     },
   },
 
@@ -107,8 +101,8 @@ export default {
     const classes = [{
       active,
       disabled,
-      'text-muted': disabled,
       'dropdown-item': true,
+      'text-muted': disabled,
     }];
 
     if (color !== 'default') {

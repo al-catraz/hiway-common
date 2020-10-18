@@ -1,9 +1,9 @@
 .btn {
-  -ms-flex-align: center;
   align-items: center;
   border-color: transparent;
   display: -ms-inline-flexbox;
   display: inline-flex;
+  -ms-flex-align: center;
   -ms-flex-pack: center;
   justify-content: center;
   position: relative;
@@ -141,7 +141,6 @@
   }
 
   &-lg {
-    border-radius: $border-radius-box;
     font-size: $font-size-large;
     padding: 13px 23px;
 

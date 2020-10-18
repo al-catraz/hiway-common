@@ -30,9 +30,9 @@
   &.bottom {
     .arrow {
       &:after {
+        border-bottom: 11px solid $color-white;
         border-left: 7px solid transparent;
         border-right: 7px solid transparent;
-        border-bottom: 11px solid $color-white;
       }
     }
   }

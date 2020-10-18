@@ -20,6 +20,7 @@ export default {
     color: {
       required: false,
       type: String,
+      default: 'default',
     },
     isLoading: {
       required: false,
@@ -28,6 +29,7 @@ export default {
     size: {
       required: false,
       type: String,
+      default: '',
     },
     type: {
       required: false,
@@ -40,11 +42,7 @@ export default {
     classes() {
       const classes = ['btn'];
 
-      if (this.color) {
-        classes.push(`btn-${this.color}`);
-      } else {
-        classes.push('btn-default');
-      }
+      classes.push(`btn-${this.color}`);
 
       if (this.isLoading) {
         classes.push('btn-loading');

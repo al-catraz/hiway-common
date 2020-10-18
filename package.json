@@ -2,6 +2,18 @@
   "name": "hiway-common",
   "version": "1.0.0",
   "dependencies": {
+    "@vue/cli-plugin-babel": "^4.5.7",
     "bootstrap-sass": "^3.4.1"
+  },
+  "devDependencies": {
+    "@dp-vue/eslint-plugin": "^1.0.0-beta.48",
+    "@vue/cli-plugin-eslint": "^4.5.7",
+    "@vue/eslint-config-airbnb": "^5.0.2",
+    "babel-eslint": "^11.0.0-beta.2",
+    "eslint": "^7.11.0",
+    "eslint-plugin-vue": "^7.0.1",
+    "stylelint": "^13.7.2",
+    "stylelint-order": "^4.1.0",
+    "stylelint-scss": "^3.18.0"
   }
 }
