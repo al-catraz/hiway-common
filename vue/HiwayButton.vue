@@ -14,6 +14,8 @@
 
 <script>
 export default {
+  name: 'HiwayButton',
+
   props: {
     color: {
       required: false,
