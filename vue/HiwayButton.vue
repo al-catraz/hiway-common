@@ -1,6 +1,7 @@
 <template>
   <button
     :class="classes"
+    :disabled="isLoading"
     :type="type"
     v-on="$listeners"
   >
