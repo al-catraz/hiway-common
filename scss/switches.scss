@@ -1,0 +1,51 @@
+.switch {
+  $switch: &;
+
+  align-items: center;
+  cursor: pointer;
+  display: inline-flex;
+  position: relative;
+  user-select: none;
+
+  &__checkbox {
+    left: 0;
+    opacity: 0;
+    outline: none;
+    position: absolute;
+    z-index: -1;
+
+    &:checked {
+      & + #{$switch}__switcher {
+        background: $color-green-04;
+
+        &:before {
+          transform: translate3d(100%, 0, 0);
+        }
+      }
+    }
+  }
+
+  &__switcher {
+    align-items: center;
+    background: $color-gray-02;
+    border-radius: 14px;
+    display: flex;
+    flex-shrink: 0;
+    height: 24px;
+    padding: 4px;
+    transition: background 0.15s ease-out;
+    width: 40px;
+
+    &:before {
+      @include square(16px);
+
+      background: $color-white;
+      border-radius: 100%;
+      content: '';
+      display: block;
+      transform-origin: left;
+      transition: transform 0.15s ease-out;
+      will-change: transform;
+    }
+  }
+}
