@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "dependencies": {
     "@vue/cli-plugin-babel": "^4.5.7",
-    "bootstrap-sass": "^3.4.1"
+    "bootstrap-sass": "^3.4.1",
+    "v-tooltip": "^3.0.0-alpha.11"
   },
   "devDependencies": {
     "@dp-vue/eslint-plugin": "^1.0.0-beta.48",
