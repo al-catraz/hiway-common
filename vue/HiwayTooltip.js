@@ -18,5 +18,4 @@ VTooltip.options = {
   defaultWrapperClass: '',
 };
 
-export const HiwayTooltip = VTooltip;
-export default HiwayTooltip;
+export default VTooltip;
