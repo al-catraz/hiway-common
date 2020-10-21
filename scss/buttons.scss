@@ -7,11 +7,11 @@
   -ms-flex-pack: center;
   justify-content: center;
   position: relative;
-  transition: background 0.2s, color 0.2s;
+  transition: background 0.2s, color 0.2s, transform 0.2s;
   white-space: nowrap;
 
   &:active {
-    transform: scale(0.9);
+    transform: scale(0.95);
   }
 
   &:hover,
