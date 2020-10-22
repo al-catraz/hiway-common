@@ -5,13 +5,15 @@ $editor-header-height:      60px;
 
 $color-white:             #fff !default;
 $color-black:             #000 !default;
-$color-gray-00:           #141f33 !default;
-$color-gray-01:           #738195 !default;
-$color-gray-02:           #abb3bf !default;
-$color-gray-03:           #ebeff0 !default;
-$color-gray-04:           #f5f7fa !default;
-$color-gray-05:           #959ca6 !default;
-$color-gray-06:           #dde0e4 !default;
+$color-gray-00:           #131f33 !default; // dark
+$color-gray-02:           #abb3bf !default; // 400
+$color-gray-03:           #ebeff0 !default; // 100
+$color-gray-04:           #f6f8f8 !default; // 50
+$color-gray-05:           #959ca6 !default; // 500
+$color-gray-06:           #dde0e4 !default; // 200
+$color-gray-07:           #6a7586 !default; // 600 new
+$color-gray-08:           #4b5461 !default; // 700 new
+$color-gray-09:           #2d3a50 !default; // 800 new
 $color-green-00:          #007577 !default;
 $color-green-01:          #00babd !default;
 $color-green-02:          #7fdcde !default;
@@ -38,7 +40,7 @@ $border-solid-light:        1px solid $color-gray-04 !default;
 // Fonts
 
 $font-size-small:           12px !default;
-$font-size-normal:          13px !default;
+$font-size-normal:          14px !default;
 $font-size-base:            16px !default;
 $font-size-large:           18px !default;
 $font-size-h1:              42px !default;
