@@ -65,20 +65,40 @@ $font-weights: (
       margin: $offset !important;
     }
 
+    .offset#{$size}-n#{$offset-name} {
+      margin: -$offset !important;
+    }
+
     .offset#{$size}-top-#{$offset-name} {
       margin-top: $offset !important;
+    }
+
+    .offset#{$size}-top-n#{$offset-name} {
+      margin-top: -$offset !important;
     }
 
     .offset#{$size}-bottom-#{$offset-name} {
       margin-bottom: $offset !important;
     }
 
+    .offset#{$size}-bottom-n#{$offset-name} {
+      margin-bottom: -$offset !important;
+    }
+
     .offset#{$size}-left-#{$offset-name} {
       margin-left: $offset !important;
     }
 
+    .offset#{$size}-left-n#{$offset-name} {
+      margin-left: -$offset !important;
+    }
+
     .offset#{$size}-right-#{$offset-name} {
       margin-right: $offset !important;
+    }
+
+    .offset#{$size}-right-n#{$offset-name} {
+      margin-right: -$offset !important;
     }
 
     .padding#{$size}-#{$offset-name} {
