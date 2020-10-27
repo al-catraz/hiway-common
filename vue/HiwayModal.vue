@@ -206,7 +206,6 @@ export default {
         afterEnter: this.onAfterEnter,
         afterLeave: this.onAfterLeave,
         beforeEnter: this.onBeforeEnter,
-        beforeLeave: this.onBeforeLeave,
       };
     },
   },
