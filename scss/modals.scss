@@ -67,11 +67,4 @@
 	.modal-body {
 		overflow-y: auto;
 	}
-
-	.modal-dialog,
-	.modal-content {
-		@include tablet-and-larger() {
-			max-height: calc(100vh - 60px);
-		}
-	}
 }
