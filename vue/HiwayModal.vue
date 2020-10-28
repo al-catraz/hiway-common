@@ -91,12 +91,6 @@ export default {
   },
 
   props: {
-    closeOnBackButton: {
-      type: Boolean,
-      default: false,
-      required: false,
-    },
-
     closeOnClickOutside: {
       type: Boolean,
       default: true,
@@ -125,12 +119,6 @@ export default {
       required: false,
       type: String,
       default: SIZE_MD,
-    },
-
-    stickToBottomOnMobile: {
-      type: Boolean,
-      default: false,
-      required: false,
     },
 
     subtitle: {
@@ -187,14 +175,6 @@ export default {
         'fade',
         'modal-scrollable',
       ];
-
-      if (this.stickToBottomOnMobile) {
-        classes.push('modal-stick-bottom-xs');
-      }
-
-      if (this.showModal) {
-        classes.push('display-block');
-      }
 
       if (this.showModal && this.readyForShowAnimate) {
         classes.push('show');
