@@ -22,7 +22,7 @@
           <div class="modal-header">
             <button
               v-if="showCloseBtn"
-              class="close"
+              class="btn btn-transparent close"
               type="button"
               @click.prevent="close"
             >
