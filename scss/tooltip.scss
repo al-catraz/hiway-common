@@ -1,8 +1,8 @@
 .tooltip {
   &-inner {
     background: $color-white;
-    border: 1px solid rgba($color-gray-00, 0.05);
-    box-shadow: 0 5px 12px rgba($color-black, 0.1);
+    border: $border-base;
+    box-shadow: $box-shadow-base;
     color: $color-gray-00;
     font-size: $font-size-normal;
     padding: 8px;

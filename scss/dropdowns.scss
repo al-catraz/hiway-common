@@ -18,9 +18,9 @@
 }
 
 .dropdown-menu {
-  border-color: rgba($color-gray-00, 0.05);
+  border: $border-base;
   border-radius: $border-radius-base;
-  box-shadow: 0 10px 14px rgba($color-black, 0.1);
+  box-shadow: $box-shadow-base;
   flex-direction: column;
   min-width: 200px;
   padding: 8px;

@@ -19,7 +19,7 @@
 
   &-content {
     border-radius: 12px;
-    box-shadow: 0 5px 12px rgba($color-black, 0.1);
+    box-shadow: $box-shadow-base;
     display: flex;
     flex-direction: column;
   }
