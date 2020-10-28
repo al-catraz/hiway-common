@@ -179,7 +179,7 @@ export default {
         classes.push('show');
       }
 
-      if (this.showModal && this.readyForAnimate) {
+      if (this.showModal && this.readyForShowAnimate) {
         classes.push('in');
       }
 
