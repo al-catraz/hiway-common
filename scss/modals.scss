@@ -18,7 +18,7 @@
   }
 
   &-content {
-    border-radius: 12px;
+    border-radius: $border-radius-large;
     box-shadow: $box-shadow-base;
     display: flex;
     flex-direction: column;

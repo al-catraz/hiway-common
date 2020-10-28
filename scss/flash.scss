@@ -1,0 +1,67 @@
+.flash {
+  &__container {
+    left: 50%;
+    max-width: 900px;
+    min-width: 450px;
+    pointer-events: none;
+    position: fixed;
+    top: 20px;
+    transform: translateX(-50%);
+    z-index: $zindex-modal-background + 20;
+  }
+
+  &__message {
+    background: $color-white;
+    border-radius: $border-radius-large;
+    border-style: solid;
+    border-width: 2px;
+    display: flex;
+    font-size: $font-size-base;
+    font-weight: $font-weight-medium;
+    justify-content: space-between;
+    padding: 15px 20px;
+    pointer-events: auto;
+
+    &.success {
+      border-color: $color-green-04;
+      color: $color-green-04;
+    }
+
+    &.error {
+      border-color: $color-red-00;
+      color: $color-red-00;
+    }
+  }
+
+  &__close-button {
+    @include square(24px);
+
+    align-items: center;
+    appearance: none;
+    background: $color-gray-05;
+    border: 0;
+    border-radius: 50%;
+    color: $color-white;
+    display: inline-flex;
+    font-size: 22px;
+    font-weight: normal;
+    justify-content: center;
+    opacity: 1;
+    padding: 0;
+    position: relative;
+    transition: opacity 0.2s;
+
+    span {
+      position: relative;
+      top: -2px;
+    }
+
+    &:hover {
+      opacity: 0.7;
+    }
+
+    &:focus {
+      outline: 0;
+    }
+  }
+}
