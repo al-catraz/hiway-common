@@ -373,7 +373,7 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
   body.modal-open {
     margin-right: var(--scroll-bar-width);
   }
