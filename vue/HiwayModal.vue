@@ -175,8 +175,12 @@ export default {
         'modal-scrollable',
       ];
 
-      if (this.showModal && this.readyForShowAnimate) {
+      if (this.showModal) {
         classes.push('show');
+      }
+
+      if (this.showModal && this.readyForAnimate) {
+        classes.push('in');
       }
 
       return classes;
