@@ -15,28 +15,14 @@
       @click.self="onClickOutside"
       @keydown.esc="close"
     >
-      <div :class="dialogClasses">
+      <div
+        :class="dialogClasses"
+      >
         <div class="modal-content">
           <div class="modal-header">
-            <div v-if="hasHeading">
-              <h5
-                v-if="title"
-                class="modal-title text-gray-07"
-              >
-                {{ title }}
-              </h5>
-
-              <p
-                v-if="subtitle"
-                class="m-0 text-muted"
-              >
-                {{ subtitle }}
-              </p>
-            </div>
-
             <button
               v-if="showCloseBtn"
-              class="btn btn-transparent close"
+              class="close"
               type="button"
               @click.prevent="close"
             >
@@ -50,6 +36,22 @@
                 </svg>
               </i>
             </button>
+
+            <div v-if="hasHeading">
+              <h4
+                v-if="title"
+                class="modal-title"
+              >
+                {{ title }}
+              </h4>
+
+              <p
+                v-if="subtitle"
+                class="offset-0 text-muted"
+              >
+                {{ subtitle }}
+              </p>
+            </div>
           </div>
 
           <div
@@ -95,37 +97,36 @@ export default {
       default: true,
       required: false,
     },
-
     scrollLockExceptions: {
       required: false,
       type: String,
       default: '.multiselect, .dropdown-menu',
     },
-
     show: {
       type: Boolean,
       default: false,
       required: false,
     },
-
     showCloseBtn: {
       type: Boolean,
       default: true,
       required: false,
     },
-
     size: {
       required: false,
       type: String,
       default: SIZE_MD,
     },
-
+    stickToBottomOnMobile: {
+      type: Boolean,
+      default: false,
+      required: false,
+    },
     subtitle: {
       required: false,
       type: String,
       default: '',
     },
-
     title: {
       required: false,
       type: String,
@@ -135,14 +136,15 @@ export default {
 
   data: () => ({
     clientY: 0,
-    readyForHideAnimate: false,
-    readyForShowAnimate: false,
+    readyForAnimate: false,
     showModal: false,
   }),
 
   computed: {
     dialogClasses() {
-      const classes = ['modal-dialog'];
+      const classes = [
+        'modal-dialog',
+      ];
 
       if (this.size !== SIZE_MD) {
         classes.push(`modal-${this.size}`);
@@ -175,11 +177,15 @@ export default {
         'modal-scrollable',
       ];
 
+      if (this.stickToBottomOnMobile) {
+        classes.push('modal-stick-bottom-xs');
+      }
+
       if (this.showModal) {
         classes.push('show');
       }
 
-      if (this.showModal && this.readyForShowAnimate) {
+      if (this.showModal && this.readyForAnimate) {
         classes.push('in');
       }
 
@@ -195,6 +201,7 @@ export default {
         afterEnter: this.onAfterEnter,
         afterLeave: this.onAfterLeave,
         beforeEnter: this.onBeforeEnter,
+        beforeLeave: this.onBeforeLeave,
       };
     },
   },
@@ -202,7 +209,6 @@ export default {
   watch: {
     show: {
       immediate: true,
-
       handler(newVal, oldVal) {
         if (newVal === oldVal) {
           return;
@@ -248,27 +254,27 @@ export default {
     },
 
     onAfterEnter() {
-      this.readyForShowAnimate = true;
+      this.readyForAnimate = true;
     },
 
     onAfterLeave() {
-      this.readyForShowAnimate = false;
-      this.readyForHideAnimate = true;
-      this.toggleBodyClasses();
+      this.readyForAnimate = false;
     },
 
     onBeforeEnter() {
-      this.readyForShowAnimate = false;
-      this.readyForHideAnimate = false;
-      this.toggleBodyClasses();
+      this.readyForAnimate = false;
     },
 
-    onClickOutside() {
+    onBeforeLeave() {
+      this.readyForAnimate = true;
+    },
+
+    onClickOutside(event) {
       if (!this.closeOnClickOutside) {
         return;
       }
 
-      this.close();
+      this.close(event);
     },
 
     preventOverScroll(event) {
@@ -312,12 +318,14 @@ export default {
       }
 
       const { clientWidth, style } = document.documentElement;
+      const documentWidth = clientWidth;
+      const windowWidth = window.innerWidth;
 
       if (style.cssText.includes('--scroll-bar-width')) {
         return;
       }
 
-      const scrollBarWidth = window.innerWidth - clientWidth;
+      const scrollBarWidth = windowWidth - documentWidth;
 
       style.setProperty('--scroll-bar-width', `${scrollBarWidth}px`);
     },
@@ -342,14 +350,6 @@ export default {
       window.removeEventListener('resize', this.debouncedResize);
     },
 
-    toggleBodyClasses() {
-      document.body.classList.add('modal-open');
-
-      if (this.readyForHideAnimate) {
-        document.body.classList.remove('modal-open');
-      }
-    },
-
     toggleModal(value) {
       let modalCount = 0;
 
@@ -361,9 +361,9 @@ export default {
         modalCount -= 1;
       }
 
-      const modalExists = modalCount > 0;
+      document.body.classList.toggle('modal-open', modalCount > 0);
 
-      if (modalExists) {
+      if (modalCount > 0) {
         this.setViewportHeightStyle();
         this.setScrollBarWidthStyle();
         this.$nextTick(() => this.$el.focus());
