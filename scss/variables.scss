@@ -89,6 +89,11 @@ $dropdown-line-height:      floor(($line-height-computed * 1.4546)) !default;
 $dropdown-link-hover-bg:    $color-gray-03;
 $dropdown-link-hover-color: $color-gray-00;
 
+// Modals
+
+$modal-backdrop-bg:         $color-gray-00 !default;
+$modal-backdrop-opacity:    0.7 !default;
+
 // Units
 
 $grid:                      20px !default;

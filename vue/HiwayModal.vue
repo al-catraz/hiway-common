@@ -19,12 +19,12 @@
         <div class="modal-content">
           <div class="modal-header">
             <div v-if="hasHeading">
-              <h4
+              <h5
                 v-if="title"
-                class="modal-title"
+                class="modal-title text-gray-07"
               >
                 {{ title }}
-              </h4>
+              </h5>
 
               <p
                 v-if="subtitle"
@@ -36,7 +36,6 @@
 
             <button
               v-if="showCloseBtn"
-              aria-label="Close"
               class="close"
               type="button"
               @click.prevent="close"

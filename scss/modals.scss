@@ -1,70 +1,73 @@
-.modal:after {
-	background-color: $modal-backdrop-bg;
-	content: '';
-	display: block;
-	height: 100vh;
-	left: 0;
-	opacity: $modal-backdrop-opacity;
-	pointer-events: none;
-	position: fixed;
-	top: 0;
-	width: 100vw;
-	z-index: $zindex-modal-background;
-}
+.modal {
+  &:after {
+    background-color: $modal-backdrop-bg;
+    content: '';
+    display: block;
+    height: 100vh;
+    left: 0;
+    opacity: $modal-backdrop-opacity;
+    pointer-events: none;
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    z-index: $zindex-modal-background;
+  }
 
-.modal-dialog {
-	z-index: $zindex-modal;
-}
+  &-dialog {
+    z-index: $zindex-modal;
+  }
 
-.modal-content {
-	border-radius: 12px;
-	box-shadow: 0 5px 12px rgba($color-black, 0.1);
-	display: flex;
-	flex-direction: column;
-}
+  &-content {
+    border-radius: 12px;
+    box-shadow: 0 5px 12px rgba($color-black, 0.1);
+    display: flex;
+    flex-direction: column;
+  }
 
-.modal-header {
-	align-items: flex-start;
-	border-bottom: 0;
-	display: flex;
-	flex-shrink: 0;
+  &-header {
+    align-items: flex-start;
+    border-bottom: 0;
+    display: flex;
+    flex-shrink: 0;
 
-	.close {
-		display: flex;
-		margin: (-$spacer + 2px) (-$spacer) (-$spacer) auto;
-		order: 9999;
-		padding: $spacer;
-	}
-}
+    .close {
+      display: flex;
+      margin: (-$spacer + 2px) (-$spacer) (-$spacer) auto;
+      order: 9999;
+      padding: $spacer;
+    }
+  }
 
-.modal-title {
-	font-size: 18px;
-}
+  &-title {
+    font-size: $font-size-base;
+  }
 
-.modal-body {
-	flex: 1 1 auto;
-}
+  &-body {
+    flex: 1 1 auto;
+  }
 
-.modal-footer {
-	display: flex;
-	flex-shrink: 0;
-	justify-content: flex-end;
-	padding: 15px 20px;
+  &-footer {
+    border: 0;
+    display: flex;
+    flex-shrink: 0;
+    justify-content: flex-end;
+    padding: 15px 20px;
 
-	.btn-link {
-		padding-left: 0;
-		padding-right: 0;
-	}
+    .btn-link {
+      padding-left: 0;
+      padding-right: 0;
+    }
 
-	.btn + .btn {
-		margin-left: 10px;
-	}
-}
+    .btn + .btn {
+      margin-left: 10px;
+    }
+  }
 
-.modal.modal-scrollable {
-	overflow: hidden;
+  &-scrollable {
+    overflow: hidden;
 
-	.modal-body {
-		overflow-y: auto;
-	}
+    .modal-body {
+      overflow-y: auto;
+    }
+  }
 }
