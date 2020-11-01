@@ -1,5 +1,5 @@
 <template>
-  <div class="progress">
+  <div :class="classes">
     <div
       class="progress-bar"
       :class="{ [`bg-${color}`]: true }"
@@ -18,6 +18,11 @@ export default {
       type: String,
       default: 'green-04',
     },
+    size: {
+      required: false,
+      type: String,
+      default: '',
+    },
     value: {
       required: true,
       type: Number,
@@ -25,6 +30,16 @@ export default {
   },
 
   computed: {
+    classes() {
+      const classes = ['progress'];
+
+      if (this.size) {
+        classes.push(`progress-${this.size}`);
+      }
+
+      return classes;
+    },
+
     percent() {
       return Math.round((this.value / 100) * 100);
     },

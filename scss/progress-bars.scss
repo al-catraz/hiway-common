@@ -1,5 +1,13 @@
 .progress {
+  background: $color-gray-06;
+
+  &,
+  &-bar {
+    box-shadow: none;
+  }
+
   &-sm {
+    border-radius: 2px;
     height: 4px;
   }
 }
