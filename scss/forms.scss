@@ -41,8 +41,6 @@ textarea {
 .form-control {
   @include placeholder($color-gray-05);
 
-  -webkit-appearance: none;
-  -moz-appearance: none;
   appearance: none;
   border-color: $color-gray-06;
   border-radius: $btn-border-radius-base;
