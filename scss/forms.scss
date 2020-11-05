@@ -45,8 +45,12 @@ textarea {
   border-color: $color-gray-06;
   border-radius: $btn-border-radius-base;
   box-shadow: none;
-  height: $grid * 2;
   padding: 9px $grid / 2;
+
+  &,
+  textarea& {
+    height: $grid * 2;
+  }
 
   &[disabled] {
     background-color: $color-gray-04 !important;
