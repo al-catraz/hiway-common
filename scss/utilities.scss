@@ -17,3 +17,6 @@
 .display-flex {
   display: flex;
 }
+
+@include flex();
+@include offsets();
