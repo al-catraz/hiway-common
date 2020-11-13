@@ -2,6 +2,7 @@
   background: $color-gray-04;
   border-radius: $border-radius-large;
   padding: 30px;
+  position: relative;
 
   .table {
     margin-bottom: 0;
@@ -14,9 +15,11 @@
     position: absolute;
     right: 0;
     top: 0;
+    z-index: 1;
 
     .loader {
-      top: 33%;
+      color: $color-gray-02;
+      top: 30%;
     }
   }
 }
