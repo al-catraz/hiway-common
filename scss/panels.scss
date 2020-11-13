@@ -6,4 +6,17 @@
   .table {
     margin-bottom: 0;
   }
+
+  &__loader {
+    background: rgba($color-white, 0.8);
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+
+    .loader {
+      top: 33%;
+    }
+  }
 }
