@@ -4,7 +4,7 @@ module.exports = {
     es6: true,
   },
   extends: [
-    'plugin:@dp-vue/base',
+    'plugin:eslint-plugin-hiway-eslint/base',
   ],
   parser: 'vue-eslint-parser',
   parserOptions: {
@@ -12,7 +12,7 @@ module.exports = {
     sourceType: 'module',
   },
   plugins: [
-    '@dp-vue',
+    'eslint-plugin-hiway-eslint',
   ],
   rules: {
     'consistent-return': 'off',
