@@ -82,9 +82,12 @@
   &-text {
     flex-grow: 1;
     padding: 4px 8px;
+  }
 
-    &-sm {
-      font-size: $font-size-normal;
+  &-sm {
+    font-size: $font-size-normal;
+
+    .dropdown-item-text {
       padding: 0 5px;
     }
   }
