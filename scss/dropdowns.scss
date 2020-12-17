@@ -79,6 +79,16 @@
     cursor: $cursor-disabled;
   }
 
+  &-text {
+    flex-grow: 1;
+    padding: 4px 8px;
+
+    &-sm {
+      font-size: $font-size-normal;
+      padding: 0 5px;
+    }
+  }
+
   .to-left {
     order: -1;
   }
@@ -86,11 +96,6 @@
   .to-right {
     margin-left: auto;
     order: 9999;
-  }
-
-  .dropdown-item-text {
-    flex-grow: 1;
-    padding: 4px 8px;
   }
 }
 
