@@ -3,6 +3,7 @@ import HiwayDropdown from './HiwayDropdown.vue';
 import HiwayDropdownItem from './HiwayDropdownItem.vue';
 import HiwayModal from './HiwayModal.vue';
 import HiwayProgress from './HiwayProgress.vue';
+import HiwayPropsInput from './HiwayPropsInput.vue';
 import HiwayTooltip from './HiwayTooltip';
 
 export {
@@ -11,5 +12,6 @@ export {
   HiwayDropdownItem,
   HiwayModal,
   HiwayProgress,
+  HiwayPropsInput,
   HiwayTooltip,
 };
