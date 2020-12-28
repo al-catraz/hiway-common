@@ -31,6 +31,8 @@
 import HiwayDropdownItem from './HiwayDropdownItem.vue';
 
 export default {
+  name: 'HiwayPropsInput',
+
   components: {
     HiwayDropdownItem,
   },
