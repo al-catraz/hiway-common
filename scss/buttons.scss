@@ -119,6 +119,34 @@
     }
   }
 
+  &-white {
+    &,
+    &:hover,
+    &:focus,
+    &:active,
+    &:active:hover,
+    &:active:focus,
+    &[disabled]:hover,
+    .open > &.dropdown-toggle {
+      background-color: $color-white;
+      border-color: $color-gray-06;
+      color: $color-gray-00;
+    }
+
+    &:hover,
+    &:active:hover,
+    &:active:focus,
+    .open > &.dropdown-toggle:hover,
+    .open > &.dropdown-toggle:focus,
+    .open > &.dropdown-toggle:active {
+      border-color: $color-gray-02;
+    }
+
+    .loader {
+      color: $color-gray-02;
+    }
+  }
+
   &-transparent {
     &,
     &:hover,
