@@ -14,6 +14,11 @@ export default {
   },
 
   props: {
+    fullWidth: {
+      type: Boolean,
+      required: false,
+      default: false,
+    },
     items: {
       required: false,
       type: Array,
@@ -182,6 +187,7 @@ export default {
       {
         class: {
           dropdown: true,
+          'dropdown--full-width': this.fullWidth,
           open: this.open,
         },
       },
