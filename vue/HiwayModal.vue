@@ -12,6 +12,7 @@
       :class="modalClasses"
       role="dialog"
       tabindex="-1"
+      v-on="$listeners"
       @click.self="onClickOutside"
       @keydown.esc="close"
     >
