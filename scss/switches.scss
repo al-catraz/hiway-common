@@ -6,7 +6,7 @@
   position: relative;
   user-select: none;
 
-  &__checkbox {
+  &__input {
     left: 0;
     opacity: 0;
     outline: none;
@@ -57,7 +57,6 @@
       display: block;
       transform-origin: left;
       transition: transform 0.15s ease-out;
-      will-change: transform;
     }
 
     & + .control-label {

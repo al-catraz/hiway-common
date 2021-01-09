@@ -4,6 +4,7 @@ import HiwayDropdownItem from './HiwayDropdownItem.vue';
 import HiwayModal from './HiwayModal.vue';
 import HiwayProgress from './HiwayProgress.vue';
 import HiwayPropsInput from './HiwayPropsInput.vue';
+import HiwaySwitch from './HiwaySwitch.vue';
 import HiwayTooltip from './HiwayTooltip';
 
 export {
@@ -13,5 +14,6 @@ export {
   HiwayModal,
   HiwayProgress,
   HiwayPropsInput,
+  HiwaySwitch,
   HiwayTooltip,
 };
