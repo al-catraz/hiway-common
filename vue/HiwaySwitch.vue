@@ -3,6 +3,7 @@
     <input
       :checked="isChecked"
       class="switch__input"
+      :disabled="disabled"
       type="checkbox"
       v-on="$listeners"
     >
@@ -24,6 +25,11 @@ export default {
   name: 'HiwaySwitch',
 
   props: {
+    disabled: {
+      required: false,
+      type: Boolean,
+      default: false,
+    },
     isChecked: {
       required: true,
       type: Boolean,
