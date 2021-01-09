@@ -12,7 +12,7 @@
     <span
       v-if="label"
       class="control-label"
-      :class="labelClasses"
+      :class="labelClass"
     >
       {{ label }}
     </span>
