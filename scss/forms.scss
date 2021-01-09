@@ -3,7 +3,7 @@ textarea {
 }
 
 .control-label {
-  font-weight: $font-weight-medium;
+  font-weight: $font-weight-normal;
 }
 
 .form-group {
@@ -83,6 +83,12 @@ textarea {
 .form-control,
 textarea.form-control {
   height: $grid * 2;
+}
+
+.form-horizontal {
+  .control-label {
+    text-align: left;
+  }
 }
 
 @include tablet {
