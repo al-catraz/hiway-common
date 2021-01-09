@@ -1,6 +1,7 @@
 <template>
   <label class="switch">
     <input
+      :id="id"
       :checked="isChecked"
       class="switch__input"
       :disabled="disabled"
@@ -29,6 +30,11 @@ export default {
       required: false,
       type: Boolean,
       default: false,
+    },
+    id: {
+      required: false,
+      type: String,
+      default: '',
     },
     isChecked: {
       required: true,
