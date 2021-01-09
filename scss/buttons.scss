@@ -170,6 +170,8 @@
     &:active,
     &[disabled]:hover {
       @include gradient-horizontal(#f8b1f2, $color-purple-02);
+
+      color: $color-white;
     }
 
     .loader {
