@@ -1,8 +1,10 @@
 .btn {
   align-items: center;
+  background-clip: padding-box;
   border-color: transparent;
   display: inline-flex;
   justify-content: center;
+  padding: 7px 13px;
   position: relative;
   transition: background 0.2s, border-color 0.2s, color 0.2s, transform 0.2s;
   white-space: nowrap;
@@ -161,12 +163,25 @@
     }
   }
 
+  &-premium {
+    &,
+    &:hover,
+    &:focus,
+    &:active,
+    &[disabled]:hover {
+      @include gradient-horizontal(#f8b1f2, $color-purple-02);
+    }
+
+    .loader {
+      color: $color-white;
+    }
+  }
+
   // Sizes
 
   &-sm {
     font-size: $font-size-small;
-    padding-left: 10px;
-    padding-right: 10px;
+    padding: 6px 11px;
 
     .loader {
       font-size: 2px;
@@ -176,7 +191,7 @@
 
   &-lg {
     font-size: $font-size-large;
-    padding: 13px 23px;
+    padding: 14px 24px;
 
     .loader {
       font-size: 6px;
