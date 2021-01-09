@@ -2,7 +2,7 @@
   <label class="switch">
     <input
       :checked="isChecked"
-      class="switch__checkbox"
+      class="switch__input"
       type="checkbox"
       v-on="$listeners"
     >
