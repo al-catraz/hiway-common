@@ -1,4 +1,29 @@
 /* global define */
+const plansConfig = {
+  free: {
+    basicAnalytics: true,
+    basicStyling: true,
+    campaignTargeting: false,
+    campaignsLimit: 1,
+    customCss: false,
+    isWhiteLabel: false,
+    premiumSupport: false,
+    price: 0,
+    usersLimit: 1000,
+  },
+  premium: {
+    basicAnalytics: true,
+    basicStyling: true,
+    campaignTargeting: true,
+    campaignsLimit: 10,
+    customCss: true,
+    isWhiteLabel: true,
+    premiumSupport: true,
+    price: 29,
+    usersLimit: 5000,
+  },
+};
+
 function castVariable(variable) {
   let isJson = false;
 
@@ -44,6 +69,7 @@ function getUID() {
   Object.assign(exports, {
     castVariable,
     getUID,
+    plansConfig,
   });
 
   Object.defineProperty(exports, '__esModule', { value: true });
