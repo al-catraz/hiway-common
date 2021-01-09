@@ -19,3 +19,7 @@
 @include bg-variant('.bg-purple-02', $color-purple-02);
 @include bg-variant('.bg-pink-00', $color-pink-00);
 @include bg-variant('.bg-red-00', $color-red-00);
+
+.bg-premium {
+  @include gradient-horizontal(#f8b1f2, $color-purple-02);
+}

@@ -3,6 +3,7 @@
     <input
       :checked="isChecked"
       class="radio-button__input"
+      :disabled="disabled"
       type="radio"
       v-on="$listeners"
     >
@@ -24,6 +25,11 @@ export default {
   name: 'HiwayRadio',
 
   props: {
+    disabled: {
+      required: false,
+      type: Boolean,
+      default: false,
+    },
     isChecked: {
       required: true,
       type: Boolean,
