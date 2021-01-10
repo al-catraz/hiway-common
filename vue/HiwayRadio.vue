@@ -1,7 +1,7 @@
 <template>
   <label class="radio-button">
     <input
-      :checked="isChecked"
+      :checked="checked"
       class="radio-button__input"
       :disabled="disabled"
       type="radio"
@@ -25,14 +25,14 @@ export default {
   name: 'HiwayRadio',
 
   props: {
+    checked: {
+      required: true,
+      type: Boolean,
+    },
     disabled: {
       required: false,
       type: Boolean,
       default: false,
-    },
-    isChecked: {
-      required: true,
-      type: Boolean,
     },
     label: {
       required: false,

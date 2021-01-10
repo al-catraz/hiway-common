@@ -105,8 +105,8 @@
     &:focus,
     &:active,
     &[disabled]:hover {
-      background-color: $color-pink-00;
-      color: $color-red-00;
+      background-color: $color-red-00;
+      color: $color-white;
     }
 
     &:hover,

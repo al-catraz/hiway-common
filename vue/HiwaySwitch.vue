@@ -2,7 +2,7 @@
   <label class="switch">
     <input
       :id="id"
-      :checked="isChecked"
+      :checked="checked"
       class="switch__input"
       :disabled="disabled"
       type="checkbox"
@@ -26,6 +26,10 @@ export default {
   name: 'HiwaySwitch',
 
   props: {
+    checked: {
+      required: true,
+      type: Boolean,
+    },
     disabled: {
       required: false,
       type: Boolean,
@@ -35,10 +39,6 @@ export default {
       required: false,
       type: String,
       default: '',
-    },
-    isChecked: {
-      required: true,
-      type: Boolean,
     },
     label: {
       required: false,
