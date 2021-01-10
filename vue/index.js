@@ -7,6 +7,7 @@ import HiwayPropsInput from './HiwayPropsInput.vue';
 import HiwayRadio from './HiwayRadio.vue';
 import HiwaySwitch from './HiwaySwitch.vue';
 import HiwayTooltip from './HiwayTooltip';
+import HiwayUrlInput from './HiwayUrlInput.vue';
 
 export {
   HiwayButton,
@@ -18,4 +19,5 @@ export {
   HiwayRadio,
   HiwaySwitch,
   HiwayTooltip,
+  HiwayUrlInput,
 };
