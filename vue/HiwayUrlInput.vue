@@ -13,7 +13,7 @@
       :props-list="propsList"
     >
       <input
-        id="id"
+        :id="id"
         ref="urlPrefix"
         v-model.trim="valueLocal"
         class="form-control"
