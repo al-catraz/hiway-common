@@ -112,12 +112,11 @@
     &:hover,
     &:active:hover,
     &:active:focus {
-      background-color: lighten($color-pink-00, 3%);
-      color: $color-red-00;
+      background-color: lighten($color-red-00, 3%);
     }
 
     .loader {
-      color: $color-red-00;
+      color: $color-white;
     }
   }
 
