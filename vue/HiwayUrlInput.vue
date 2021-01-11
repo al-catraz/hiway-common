@@ -20,6 +20,7 @@
         maxlength="255"
         :style="`padding-left: ${urlOffset}px;`"
         type="text"
+        v-on="$listeners"
         @input="trimUrl"
       >
     </hiway-props-input>
