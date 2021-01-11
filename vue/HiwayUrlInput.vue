@@ -102,6 +102,14 @@ export default {
         this.urlOffset = this.$refs.urlPrefixSource.offsetWidth - 1;
       });
     },
+
+    value(value) {
+      const suffixSlashRegex = new RegExp(`^${this.suffixSlash}`);
+
+      if (value) {
+        this.valueLocal = value.replace(suffixSlashRegex, '');
+      }
+    },
   },
 
   created() {
