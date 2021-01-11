@@ -69,7 +69,7 @@ export default {
       default: () => [],
     },
     value: {
-      type: String,
+      type: [String, Object],
       required: true,
     },
   },
@@ -113,7 +113,7 @@ export default {
   },
 
   mounted() {
-    this.urlOffset = this.$refs.urlPrefixSource.offsetWidth - 2;
+    this.urlOffset = this.$refs.urlPrefixSource.offsetWidth;
   },
 
   methods: {
