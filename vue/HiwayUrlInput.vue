@@ -1,5 +1,8 @@
 <template>
-  <div class="url-input__container">
+  <div
+    class="url-input__container"
+    @focus="$refs.urlPrefix.focus()"
+  >
     <div
       class="url-input__prefix"
       @click="$refs.urlPrefix.focus()"
@@ -20,7 +23,6 @@
         maxlength="255"
         :style="`padding-left: ${urlOffset}px;`"
         type="text"
-        v-on="$listeners"
         @input="trimUrl"
       >
     </hiway-props-input>
@@ -118,8 +120,7 @@ export default {
   },
 
   methods: {
-    trimUrl(event, second) {
-      console.log(event, second)
+    trimUrl() {
       const prefixRegex = new RegExp(`^${this.baseUrl}${this.suffixSlash}`);
 
       this.$nextTick(() => {
