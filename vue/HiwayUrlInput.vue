@@ -20,6 +20,7 @@
         maxlength="255"
         :style="`padding-left: ${urlOffset}px;`"
         type="text"
+        v-on="$listeners"
         @input="trimUrl"
       >
     </hiway-props-input>
@@ -114,14 +115,11 @@ export default {
 
   mounted() {
     this.urlOffset = this.$refs.urlPrefixSource.offsetWidth;
-
-    this.$on('focus', () => {
-      this.$refs.urlPrefix.focus();
-    });
   },
 
   methods: {
-    trimUrl() {
+    trimUrl(event, second) {
+      console.log(event, second)
       const prefixRegex = new RegExp(`^${this.baseUrl}${this.suffixSlash}`);
 
       this.$nextTick(() => {
