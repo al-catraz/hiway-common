@@ -69,7 +69,7 @@ export default {
       default: () => [],
     },
     value: {
-      type: [String, Object],
+      type: undefined,
       required: true,
     },
   },
