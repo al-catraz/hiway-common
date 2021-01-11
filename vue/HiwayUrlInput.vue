@@ -1,8 +1,5 @@
 <template>
-  <div
-    class="url-input__container"
-    @focus="$refs.urlPrefix.focus()"
-  >
+  <div class="url-input__container">
     <div
       class="url-input__prefix"
       @click="$refs.urlPrefix.focus()"
@@ -102,7 +99,7 @@ export default {
   watch: {
     baseUrl() {
       this.$nextTick(() => {
-        this.urlOffset = this.$refs.urlPrefixSource.offsetWidth - 2;
+        this.urlOffset = this.$refs.urlPrefixSource.offsetWidth - 1;
       });
     },
   },
@@ -116,7 +113,7 @@ export default {
   },
 
   mounted() {
-    this.urlOffset = this.$refs.urlPrefixSource.offsetWidth;
+    this.urlOffset = this.$refs.urlPrefixSource.offsetWidth - 1;
   },
 
   methods: {
