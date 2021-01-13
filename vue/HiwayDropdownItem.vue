@@ -96,7 +96,17 @@ export default {
   },
 
   render(createElement) {
-    const { active, color, disabled, exact, to } = this;
+    const {
+      active,
+      color,
+      disabled,
+      exact,
+      to,
+    } = this;
+    const {
+      click,
+      ...listeners
+    } = this.$listeners;
     const content = this.prepareContent(createElement);
     const classes = [{
       active,
@@ -104,27 +114,6 @@ export default {
       'dropdown-item': true,
       'text-muted': disabled,
     }];
-
-    if (color !== 'default') {
-      classes.push(`text-${color}`);
-    }
-
-    if (to) {
-      return createElement(
-        'router-link',
-        {
-          class: classes,
-          props: {
-            exact,
-            to,
-          },
-        },
-        content,
-      );
-    }
-
-    const { click, ...listeners } = this.$listeners;
-
     const clickHandler = (event) => {
       if (typeof click === 'function') {
         click(event);
@@ -138,6 +127,28 @@ export default {
         this.$parent.$emit('close', event);
       }
     };
+
+    if (color !== 'default') {
+      classes.push(`text-${color}`);
+    }
+
+    if (to) {
+      return createElement(
+        'router-link',
+        {
+          class: classes,
+          nativeOn: {
+            click: clickHandler,
+            ...listeners,
+          },
+          props: {
+            exact,
+            to,
+          },
+        },
+        content,
+      );
+    }
 
     return createElement(
       'a',
