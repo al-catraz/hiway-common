@@ -6,6 +6,7 @@
       class="switch__input"
       :disabled="disabled"
       type="checkbox"
+      v-on="switchListeners"
     >
 
     <span class="switch__switcher"/>
@@ -71,6 +72,14 @@ export default {
       set(value) {
         this.$emit('change', value);
       },
+    },
+
+    switchListeners() {
+      const switchListeners = { ...this.$listeners };
+
+      delete switchListeners.change;
+
+      return switchListeners;
     },
   },
 };
