@@ -2,11 +2,10 @@
   <label class="switch">
     <input
       :id="id"
-      :checked="checked"
+      v-model="proxyChecked"
       class="switch__input"
       :disabled="disabled"
       type="checkbox"
-      v-on="$listeners"
     >
 
     <span class="switch__switcher"/>
@@ -25,10 +24,16 @@
 export default {
   name: 'HiwaySwitch',
 
+  model: {
+    prop: 'checked',
+    event: 'change',
+  },
+
   props: {
     checked: {
-      required: true,
-      type: Boolean,
+      required: false,
+      type: [Boolean, Number],
+      default: false,
     },
     disabled: {
       required: false,
@@ -49,6 +54,23 @@ export default {
       required: false,
       type: String,
       default: '',
+    },
+    value: {
+      required: false,
+      type: undefined,
+      default: null,
+    },
+  },
+
+  computed: {
+    proxyChecked: {
+      get() {
+        return this.checked;
+      },
+
+      set(value) {
+        this.$emit('change', value);
+      },
     },
   },
 };
