@@ -14,7 +14,7 @@
     <slot/>
 
     <hiway-button
-      v-hiway-tooltip="'Add variable'"
+      v-hiway-tooltip="'Insert variable'"
       class="dropdown-input-button"
       color="transparent"
       size="sm"
