@@ -52,6 +52,14 @@ $font-weights: (
   }
 }
 
+@mixin text-color($parent, $color) {
+  #{$parent},
+  a#{$parent}:hover,
+  a#{$parent}:focus {
+    color: $color !important;
+  }
+}
+
 @mixin offsets($size: '') {
   @each $offset-name, $offset in $offsets {
     .offset#{$size}-#{$offset-name} {

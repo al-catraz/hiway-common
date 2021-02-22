@@ -59,7 +59,8 @@
 
     hr,
     .divider {
-      margin: 5px 0;
+      border-top-color: $color-gray-06;
+      margin: 8px 0;
     }
 
     &.dropdown-menu-top {
