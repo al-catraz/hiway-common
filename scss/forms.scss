@@ -40,13 +40,15 @@ textarea {
   }
 }
 
-.form-control {
+.form-control,
+textarea.form-control {
   @include placeholder($color-gray-05);
 
   appearance: none;
   border-color: $color-gray-06;
   border-radius: $btn-border-radius-base;
   box-shadow: none;
+  height: $grid * 2;
   padding: 9px $grid / 2;
 
   &[disabled] {
@@ -78,11 +80,6 @@ textarea {
     display: block;
     width: 100%;
   }
-}
-
-.form-control,
-textarea.form-control {
-  height: $grid * 2;
 }
 
 .form-horizontal {
